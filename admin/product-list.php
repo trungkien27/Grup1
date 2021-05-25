@@ -71,7 +71,7 @@ if (!empty($_GET)) {
 	$totalPage = ceil($total/$num_page);
 
 	if ($thisProduct != null && $thisProduct > 0) {
-		$sql = 'select id, title, thumbnail, price, updated_at from books limit '.$index.', '.$num_page;
+		$sql = 'select id, title, thumbnail, price, updated_at from product limit '.$index.', '.$num_page;
 		$thisProduct = executeResult($sql);
 	}else {
 		$thisProduct = null;
