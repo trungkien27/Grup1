@@ -14,6 +14,10 @@ if (!empty($_GET)) {
 ?>
 
 
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
