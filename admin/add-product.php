@@ -35,43 +35,43 @@ if ($id > 0) {
 	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h2 class="text-center">Add Product</h2>
+				<h2 class="text-center">Trang chỉnh sửa</h2>
 			</div>
 			<div class="panel-body">
 				<form method="post">
 					<div class="form-group">
-					  <label for="title">Title:</label>
-					  <input required="true" type="text" class="form-control" id="title" name="title" value="<?=($thisProduct != null)?$thisProduct['title']:''?>">
-					  <input type="text" name="id" value="<?=($thisProduct != null)?$thisProduct['id']:''?>" style="display: none;">
+						<label for="title">Tên sản phẩm:</label>
+						<input required="true" type="text" class="form-control" id="title" name="title" value="<?=($thisProduct != null)?$thisProduct['title']:''?>">
+						<input type="text" name="id" value="<?=($thisProduct != null)?$thisProduct['id']:''?>" style="display: none;">
 					</div>
 					<div class="form-group">
-					  <label for="thumbnail">Thumbnail:</label>
-					  <input required="true" type="text" class="form-control" id="thumbnail" name="thumbnail" value="<?=($thisProduct != null)?$thisProduct['thumbnail']:''?>">
+						<label for="thumbnail">Hình Ảnh:</label>
+						<input required="true" type="text" class="form-control" id="thumbnail" name="thumbnail" value="<?=($thisProduct != null)?$thisProduct['thumbnail']:''?>">
 					</div>
 					<div class="form-group">
-					  <label for="price">Price:</label>
-					  <input required="true" min="0" type="number" class="form-control" id="price" name="price" value="<?=($thisProduct != null)?$thisProduct['price']:''?>">
+						<label for="price">Giá:</label>
+						<input required="true" min="0" type="number" class="form-control" id="price" name="price" value="<?=($thisProduct != null)?$thisProduct['price']:''?>">
 					</div>
 					<div class="form-group">
-					  <label for="category_id">Category:</label>
-					  <select required="true" class="form-control" id="category_id" name="category_id">
-					  	<option value="">-- Select --</option>
-					  	<?php
-					  		foreach ($categoryList as $item) {
-					  			if($thisProduct != null && $item['id'] == $thisProduct['category_id']) {
-					  				echo '<option selected value="'.$item['id'].'">'.$item['title'].'</option>';
-					  			} else {
-					  				echo '<option value="'.$item['id'].'">'.$item['title'].'</option>';
-					  			}
-					  		}
-					  	?>
+						<label for="category_id">Danh mục sản phẩm:</label>
+						<select required="true" class="form-control" id="category_id" name="category_id">
+							<option value="">-- Chọn danh mục --</option>
+							<?php
+								foreach ($categoryList as $item) {
+									if($thisProduct != null && $item['id'] == $thisProduct['category_id']) {
+										echo '<option selected value="'.$item['id'].'">'.$item['title'].'</option>';
+									} else {
+										echo '<option value="'.$item['id'].'">'.$item['title'].'</option>';
+									}
+								}
+							?>
 					  </select>
 					</div>
 					<div class="form-group">
-					  <label for="content">Content:</label>
-					  <textarea class="form-control" id="content" name="content" value="<?=($thisProduct != null)?$thisProduct['content']:''?>"></textarea>
+						<label for="content">Content:</label>
+						<textarea class="form-control" id="content" name="content"<?=($thisProduct != null)?$thisProduct['content']:''?>></textarea>
 					</div>
-					<a href="product-list.php"><button class="btn btn-success">Save</button></a>
+					<a href="edit-product.php"><button class="btn btn-success">Lưu</button></a>
 				</form>
 			</div>
 		</div>

@@ -80,7 +80,7 @@ if (!empty($_GET)) {
 	}else {
 		$thisProduct = null;
 	}
-	$count = $index;
+	$count = 0;
 	foreach ($productList as $item) {
 		echo '<tr>
 				<td>'.(++$count).'</td>
@@ -132,7 +132,7 @@ if (!empty($_GET)) {
 						}
 ?>	 
 		</ul>
-	</div>
+	</div> 
 <script type="text/javascript">
 	function deleteProduct(id) {
 		option = confirm('Are you sure to delete this product?')
