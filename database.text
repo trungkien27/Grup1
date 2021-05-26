@@ -17,9 +17,10 @@ create table category (
 create table product (
 	id int primary key auto_increment,
 	category_id int references category (id),
-	name varchar(20),
+	title varchar(20),
 	price float,
 	thumbnail varchar(200),
+	content varchar(500),
 	created_at datetime,
 	updated_at datetime
 );

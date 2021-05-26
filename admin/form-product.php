@@ -34,14 +34,9 @@ function addProduct() {
 	$thumbnail = getPost('thumbnail');
 	$content = getPost('content');
 	$category_id = getPost('category_id');
-
 	
-		$created_at = $updated_at = date('Y-m-d H+5:i:s');
+	$created_at = $updated_at = date('Y-m-d H+5:i:s');
 		
-	
-
-	
-
 	$sql = "insert into product(title, price, thumbnail, content, category_id, created_at, updated_at) values ('$title', '$price', '$thumbnail', '$content', $category_id, '$created_at', '$updated_at')";
 	execute($sql);
 }

@@ -69,9 +69,9 @@ if ($id > 0) {
 					</div>
 					<div class="form-group">
 					  <label for="content">Content:</label>
-					  <textarea class="form-control" id="content" name="content"><?=($thisProduct != null)?$thisProduct['content']:''?></textarea>
+					  <textarea class="form-control" id="content" name="content" value="<?=($thisProduct != null)?$thisProduct['content']:''?>"></textarea>
 					</div>
-					<a href="product-list.php>"><button class="btn btn-success">Save</button></a>
+					<a href="product-list.php"><button class="btn btn-success">Save</button></a>
 				</form>
 			</div>
 		</div>
