@@ -39,6 +39,7 @@ function addProduct() {
 		
 	$sql = "insert into product(title, price, thumbnail, content, category_id, created_at, updated_at) values ('$title', '$price', '$thumbnail', '$content', $category_id, '$created_at', '$updated_at')";
 	execute($sql);
+	header('Location: edit-product.php');
 }
 
 function updateProduct() {
@@ -55,4 +56,5 @@ function updateProduct() {
 
 	$sql = "update product set title = '$title', price = '$price', thumbnail = '$thumbnail', content = '$content', category_id = $category_id, updated_at = '$updated_at' where id = $id";
 	execute($sql);
+	header('Location: edit-product.php');
 }

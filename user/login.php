@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body background="banner.jpg">
+<body background="banner3.jpg" style="background-repeat: no-repeat;background-size: cover;">
 	<div class="hero">
 			<div class="form-box">
 				<div class="button-box">
