@@ -1,0 +1,72 @@
+.container	{
+	font-size: 20px;
+	font-family: poller_oneregular;
+	/*background-color: #e1f2da;*/
+}
+
+h3 {
+	text-transform: uppercase;
+}
+
+h3 span {
+	/*background: #252525;*/
+	display: block;
+	padding: 15px 80px 15px;
+	text-align: center;
+}
+
+div ul li {
+	border: 2px solid #1a1a1a;
+	display: flex;
+	margin-bottom: 20px;
+}
+
+ul li p {
+	margin-bottom: 100px;
+	text-align: justify;
+}
+
+.content-right{
+	display: block;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.picture {
+	border-right: 2px solid #252525;
+	margin: 0;
+	padding: 0;
+	width: 330px;
+	height: 380px;
+}
+
+.read	{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: "Arial Black", Gadget, sans-serif;
+	color: white;
+	background-color: black;
+	margin-left: 37%;
+	padding: 5px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.read:hover {
+	color: #252525;
+	background: #fff;
+	border: 2px solid #252525;
+	text-decoration: none;
+}
+
+form input, form textarea {
+	border: 2px solid #252525;
+	color: #252525;
+	/*font-family: Arial, Helvetica, sans-serif;*/
+	font-size: 20px;
+	font-weight: normal;
+	margin-bottom: 37px;
+	padding: 20px;
+	text-align: center;
+	width: 100%;
+}
