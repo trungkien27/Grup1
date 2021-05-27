@@ -35,7 +35,7 @@ function addProduct() {
 	$content = getPost('content');
 	$category_id = getPost('category_id');
 	
-	$created_at = $updated_at = date('Y-m-d H+5:i:s');
+	$created_at = $updated_at = date('Y-m-d H:i:s');
 		
 	$sql = "insert into product(title, price, thumbnail, content, category_id, created_at, updated_at) values ('$title', '$price', '$thumbnail', '$content', $category_id, '$created_at', '$updated_at')";
 	execute($sql);
@@ -52,7 +52,7 @@ function updateProduct() {
 	$category_id = getPost('category_id');
 	$id = getPost('id');
 
-	$updated_at = date('Y-m-d H+5:i:s');
+	$updated_at = date('Y-m-d H:i:s');
 
 	$sql = "update product set title = '$title', price = '$price', thumbnail = '$thumbnail', content = '$content', category_id = $category_id, updated_at = '$updated_at' where id = $id";
 	execute($sql);

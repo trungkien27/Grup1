@@ -37,8 +37,8 @@ function validateToken() {
 	$token = '';
 	if(isset($_COOKIE['token'])) {
 		$token = $_COOKIE['token'];
-
-		$sql = "select * from users where token = '$token'";
+		
+		$sql = "select * from user where token = '$token'";
 		$result = executeResult($sql, true);
 
 		$_SESSION['user'] = $result;
@@ -48,3 +48,4 @@ function validateToken() {
 
 	return false;
 }
+

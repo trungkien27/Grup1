@@ -7,7 +7,7 @@ if(!empty($_POST)) {
 
 	$sql = "create table if not exists user (
 		id int primary key auto_increment,
-		name varchar(50),
+		fullname varchar(50),
 		email varchar(50),
 		password varchar(32),
 		created_at datetime,

@@ -5,7 +5,9 @@ $title = 'Product Page';
 include_once('../layout/header.php');
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
-// include_once('code-cart.php');
+include_once('code-cart.php');
+
+
 
 $productList = executeResult('select * from product');
 ?>
@@ -58,7 +60,7 @@ foreach ($productList as $item) {
 ?>
 
 </div>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	function addToCart(id) {
 		$.post('code-cart.php', {
 			'id': id, 
@@ -67,7 +69,7 @@ foreach ($productList as $item) {
 			location.reload()
 		})
 	}
-</script> -->
+</script>
 
 
 <!-- body END -->
