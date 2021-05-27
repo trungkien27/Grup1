@@ -13,10 +13,10 @@
 
 					</p>
 					 <div class="social">
-					 	<a href=""><span class="fab fa-facebook-square"></span></a>
-					 	<a href=""><span class="fab fa-twitter"></span></a>
-					 	<a href=""><span class="fab fa-instagram"></span></a>
-					 	<a href=""><span class="fab fa-youtube"></span></a>
+					 	<a href="https://www.facebook.com/nbnailboutique" target="_blank"><span class="fab fa-facebook-square"></span></a>
+					 	<a href="https://twitter.com/" target="_blank"><span class="fab fa-twitter"></span></a>
+					 	<a href="https://www.instagram.com/nb_nailboutique/" target="_blank"><span class="fab fa-instagram"></span></a>
+					 	<a href="https://www.youtube.com/channel/UCd8aIzwdaoQ_Abp3frmeZSA" target="_blank"><span class="fab fa-youtube"></span></a>
 					 </div>
 				</div>
 			</div>
@@ -44,15 +44,15 @@
 					<div class="content">
 						<div class="content-ul">
 						 <ul >
-						  <li>Trang Chủ</li>
-						  <li>Giới Thiệu</li>
-						  <li>Dịch Vụ</li>
-						  <li>Cửa Hàng</li>
+						  <a href="home.php" style="margin: 40px"><li>Trang Chủ</li></a>
+						  <a href="" style="margin: 40px"><li>Giới Thiệu</li></a>
+						  <a href=""style="margin: 40px"><li>Dịch Vụ</li></a>
+						  <a href=""style="margin: 40px"><li>Cửa Hàng</li></a>
 						</ul>
 						<ul style="margin-left: 30px">
-						 <li>Hình Ảnh Chỉa Sẻ</li>
-						 <li>Liên Hệ</li>
-						 <li>Jion Team</li>
+						 <a href=""style="margin: 40px"><li>Hình Ảnh Chỉa Sẻ</li></a>
+						 <a href=""style="margin: 40px"><li>Liên Hệ</li></a>
+						 <a href=""style="margin: 40px"><li>Jion Team</li></a>
 						</ul>
 					</div>	
 					</div>

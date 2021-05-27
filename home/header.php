@@ -18,13 +18,17 @@
 		.nav-link {
 			margin-right: 20px;
 		}
-		.navbar-light .nav-item:hover .nav-link {
-		    color: pink;
+		.navbar-light .nav-item:hover .nav-link  {
+		    color: #f12020;
+		}
+		.navbar-light .nav-item:hover .nav-link i{
+		    color: #f12020;
+		    font-weight: bold;
 		}
 
 		.navbar-light .dropdown-item:hover,
 		.navbar-light .dropdown-item:focus {
-		    color: pink;
+		    color: #f12020;
 		    background-color: rgba(255,255,255,.5);
 		}
 	</style>
@@ -67,7 +71,7 @@
 	    </li>
 
 	    <li class="nav-item active">
-	      <a class="nav-link" href="../user/login.php"><i class="bi bi-door-open"></i>Đăng Nhập</a>
+	      <a class="nav-link" href="../user/login.php"><i class="bi bi-door-open-fill"></i>Đăng Nhập</a>
 	    </li>
 	  </ul>
 	  
@@ -83,8 +87,8 @@
 			}
 		  ?>
 			<a href="cart.php">
-				<button type="button" class="btn btn-light" style="font-size: 20px">
-					 <i class="bi bi-cart3"></i><span class="badge badge-light">Cart <?=$count?></span>
+				<button type="button" class="btn btn-outline-danger btn-sm" style="font-size: 20px;border: none;">
+					 <i class="bi bi-cart3"></i><span style="font-weight: bold; color: #000000; ">Cart <?=$count?></span>
 				</button>
 			</a>		
 	</nav>
