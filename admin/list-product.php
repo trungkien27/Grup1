@@ -5,30 +5,11 @@ $title = 'Product Page';
 include_once('../home/header.php');
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
-include_once('code-cart.php');
-
-
+// include_once('code-cart.php');
 
 $productList = executeResult('select * from product');
 ?>
 <!-- body START -->
-<div class="row">
-	<div class="col-md-4">
-		<ul style="background-color: #e3e2e1;">
-			<a href=""><li>Laptop</li></a>
-			<a href=""><li>PC</li></a>
-			<a href=""><li>Linh kien may tinh</li></a>
-			<a href=""><li>Loa, tai nghe</li></a>
-			<a href=""><li>USB, o cung</li></a>
-			<a href=""><li>May in</li></a>
-
-		</ul>
-	</div>
-	<div class="col-md-8">
-		<img src="https://hanoicomputercdn.com/media/banner/28_Apr90c4b0034d1a0a4e5a75575b357c70bd.jpg" style="width: 100%;">
-	</div>
-</div>
-
 <div class="panel panel-primary">
 	<div class="panel-heading">
 		Tìm kiếm sản phẩm

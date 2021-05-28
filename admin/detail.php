@@ -1,6 +1,6 @@
 <?php
 $title = 'Chi tiết sản phẩm';
-include_once('../layout/header.php');
+include_once('../home/header.php');
 require_once('../db/dbhelper.php');
 
 $id = 0;
@@ -67,5 +67,5 @@ $product = executeResult($sql, true);
 	}
 </script>
 <?php
-include_once('layouts/footer.php');
+include_once('../home/footer.php');
 ?>

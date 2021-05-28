@@ -2,7 +2,7 @@
 session_start();
 
 $title = 'Edit Page';
-include_once('../layout/header.php');
+include_once('../home/header.php');
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
 require_once('form-product.php');
@@ -116,6 +116,6 @@ require_once('form-product.php');
 	}
 </script>
 <!-- body END -->
-<?php
-include_once('../layout/footer.php');
-?>
+
+</body>
+</html> 
