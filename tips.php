@@ -20,11 +20,11 @@
 				<li>
 					<img src="pic/thumb 01.jpg" class="picture">
 					<div class="content-right">
-						<h3><span>25 mẫu đơn giản tự làm ở nhà</span></h3>
+						<h3><span>5 mẫu đơn giản tự làm ở nhà</span></h3>
 						<p>
 							Nếu bạn cảm thấy nhàm chán với màu móng cổ điển, đơn điệu và muốn thử một thứ gì đó vui nhộn và thú vị, hãy đọc tiếp và bạn có thể tìm thấy thiết kế móng tay hoàn hảo cho bất kỳ tâm trạng nào.
 						</p>
-						<a href="news 01.html" class="read">xem thêm</a>
+						<a href="tips-detail-01.php" class="read">xem thêm</a>
 					</div>
 				</li>
 				<li>
