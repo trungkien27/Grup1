@@ -29,7 +29,7 @@
 						<span class="text">3rd floor, 54 Le Thanh Nghi, Hai Ba Trung, Hanoi, Vietnam</span>
 					</div>
 					<div class="phone">
-						<span class="fas fa-phone-alt"></span>
+						<a href=""><span class="fas fa-phone-alt"></span></a>
 						<span class="text">+841 6666 8888</span>
 					</div>
 					<div class="email">
