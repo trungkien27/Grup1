@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +12,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style2.css">
 	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<style type="text/css">
@@ -33,15 +34,15 @@
 		}
 	</style>
 </head>
-<body>
+<body style="margin-top: 0px;">
 	<nav class="navbar navbar-expand-sm  navbar-light " style="background-color: #ffffff;">
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand" href="index.php">
     		<img src="https://static.wixstatic.com/media/4e382d_0d579ec3ec6241af9e1380ed79c56b7b~mv2.png/v1/fill/w_406,h_46,al_c,q_85,usm_0.66_1.00_0.01/Asset%202_3x.webp" alt="logo" style="width:100%;">
  		</a>
 		 <div class="container">
 		 	<ul class="navbar-nav" style="color: #000000; font-weight: bold;">
 			    <li class="nav-item active">
-      				<a  class="nav-link" href="#">Trang Chủ</a>	
+      				<a  class="nav-link" href="index.php">Trang Chủ</a>	
       			</li>
       			 <li class="nav-item active">
       				<a class="nav-link" href="#">Giới Thiệu</a>	
@@ -64,7 +65,7 @@
 	      <a class="nav-link" href="#">Hình Ảnh Chỉa Sẻ</a>
 	    </li>
 	   <li class="nav-item active">
-	      <a class="nav-link" href="#">Liên Hệ</a>
+	      <a class="nav-link" href="contact-us.php">Liên Hệ</a>
 	    </li>
 	    <li class="nav-item active">
 	      <a class="nav-link" href="#">Join Our Team</a>
