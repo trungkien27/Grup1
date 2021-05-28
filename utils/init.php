@@ -1,5 +1,5 @@
 <?php
-require_once('db/dbhelper.php');
+require_once('../db/dbhelper.php');
 
 if(!empty($_POST)) {
 	$sql = "create database if not exists ".DATABASE;
@@ -46,11 +46,11 @@ if(!empty($_POST)) {
 
 	$sql = "create table if not exists orders (
 		id int primary key auto_increment,
-		fullname varchar(50),
-		phone_number varchar(20),
-		email varchar(50),
-		address varchar(200),
+		user_id int references user (id),
 		order_date datetime,
+		note varchar(500),
+		address varchar(200),
+		phone_number varchar(20),
 		created_at datetime,
 		updated_at datetime
 	)";
@@ -62,6 +62,15 @@ if(!empty($_POST)) {
 		product_id int references product (id),
 		quantity int,
 		total_price float,
+		created_at datetime,
+		updated_at datetime
+	)";
+	execute($sql);
+
+	$sql = "create table if not exists feedback (
+		id int primary key auto_increment,
+		user_id int references user (id),
+		title varchar(100),
 		note varchar(500),
 		created_at datetime,
 		updated_at datetime

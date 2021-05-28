@@ -2,6 +2,6 @@
 define('HOST', 'localhost');
 define('USERNAME', 'root');
 define('PASSWORD', '');
-define('DATABASE', 'newbie');
+define('DATABASE', 'new_project');
 
 define('MD5_PRIMARY_KEY', 'fass');

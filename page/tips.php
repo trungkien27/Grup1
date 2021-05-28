@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tips</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
+<?php
+include_once('../home/header.php');
+?>
 	<div class="container">
 		<h1><span class="title">Tips</span></h1>
 		<div class="tip">
 			<ul>
 				<li>
-					<img src="pic/thumb 01.jpg" class="picture">
+					<img src="../pic/thumb 01.jpg" class="picture">
 					<div class="content-right">
 						<h3><span>5 mẫu đơn giản tự làm ở nhà</span></h3>
 						<p>
@@ -28,7 +16,7 @@
 					</div>
 				</li>
 				<li>
-					<img src="pic/thumb 02.jpg" class="picture">
+					<img src="../pic/thumb 02.jpg" class="picture">
 					<div class="content-right">
 						<h3><span>Bắt kịp trend cho 2021</span></h3>
 						<p>
@@ -38,7 +26,7 @@
 					</div>
 				</li>
 				<li>
-					<img src="pic/thumb 03.jpg" class="picture">
+					<img src="../pic/thumb 03.jpg" class="picture">
 					<div class="content-right">
 						<h3><span>Dành cho những cô nàng tinh nghịch</span></h3>
 						<p>
@@ -48,7 +36,7 @@
 					</div>
 				</li>
 				<li>
-					<img src="pic/thumb 04.jpg" class="picture">
+					<img src="../pic/thumb 04.jpg" class="picture">
 					<div class="content-right">
 						<h3><span>Những style cho mùa đông không nên bỏ lỡ</span></h3>
 						<p>
@@ -60,5 +48,7 @@
 			</ul>
 		</div>
 	</div>
-</body>
-</html>
+
+<?php
+include_once('../home/footer.php');
+?>

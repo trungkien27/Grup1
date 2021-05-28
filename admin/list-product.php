@@ -2,7 +2,7 @@
 session_start();
 
 $title = 'Product Page';
-include_once('../layout/header.php');
+include_once('../home/header.php');
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
 include_once('code-cart.php');
@@ -74,5 +74,5 @@ foreach ($productList as $item) {
 
 <!-- body END -->
 <?php
-include_once('../layout/footer.php');
+include_once('../home/footer.php');
 ?>
