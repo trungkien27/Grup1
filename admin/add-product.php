@@ -18,7 +18,7 @@ include_once('../home/header.php');
 	<div class="container">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<h2 class="text-center">Trang chỉnh sửa</h2>
+				<h2 class="text-center">Trang chỉnh sửa sản phẩm </h2>
 			</div>
 			<div class="panel-body">
 				<form method="post">
@@ -55,6 +55,7 @@ include_once('../home/header.php');
 						<textarea class="form-control" id="content" name="content"<?=($thisProduct != null)?$thisProduct['content']:''?>></textarea>
 					</div>
 					<a href="edit-product.php"><button class="btn btn-success">Lưu</button></a>
+					<a href="edit-product.php"><button type="button" class="btn btn-info" style="float: right;">Quay lại </button></a>
 				</form>
 			</div>
 		</div>
