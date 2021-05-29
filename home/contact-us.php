@@ -1,7 +1,7 @@
 <?php
 	include_once('../home/header.php');
 ?>
-<link rel="stylesheet" type="text/css" href="style3.css">
+<link rel="stylesheet" type="text/css" href="contact.css">
 	<div class="contact-warp">
 		<div class="contact-in">
 			<h1>Contact Info</h1>

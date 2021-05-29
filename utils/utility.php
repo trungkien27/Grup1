@@ -22,3 +22,6 @@ function getGet($key) {
 
 	return removeSpecialCharacter($value);
 }
+function getMd5Security($pwd) {
+	return md5(md5($pwd).MD5_PRIVATE_KEY);
+}
