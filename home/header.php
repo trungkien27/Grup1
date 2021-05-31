@@ -12,7 +12,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-	<link rel="stylesheet" type="text/css" href="style2.css">
+	<link rel="stylesheet" type="text/css" href="footer.css">
 	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<style type="text/css">
@@ -21,6 +21,9 @@
 		}
 		.navbar-light .nav-item:hover .nav-link  {
 		    color: #f12020;
+		}
+		.navbar-light .nav-item .nav-link  {
+		   font-size: 14spx;
 		}
 		.navbar-light .nav-item:hover .nav-link i{
 		    color: #f12020;
@@ -32,10 +35,17 @@
 		    color: #f12020;
 		    background-color: rgba(255,255,255,.5);
 		}
+		header{
+		  position: fixed;
+		  top: 0;
+		  width: 100%;
+		  box-sizing: border-box;
+		}
 	</style>
 </head>
 <body style="margin-top: 0px;">
-	<nav class="navbar navbar-expand-sm  navbar-light " style="background-color: #ffffff;">
+	<header>
+		<nav class="navbar navbar-expand-sm  navbar-light " style="background-color: #ffffff;">
 		<a class="navbar-brand" href="index.php">
     		<img src="https://static.wixstatic.com/media/4e382d_0d579ec3ec6241af9e1380ed79c56b7b~mv2.png/v1/fill/w_406,h_46,al_c,q_85,usm_0.66_1.00_0.01/Asset%202_3x.webp" alt="logo" style="width:100%;">
  		</a>
@@ -93,6 +103,8 @@
 				</button>
 			</a>		
 	</nav>
-</div>
+	</header>
+	
+
 
 
