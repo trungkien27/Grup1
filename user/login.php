@@ -1,51 +1,55 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login - Page </title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="login.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-	<!-- Popper JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<title>logign</title>
 </head>
-<body background="baner.jpg";> 
-	<div class="hero">
-			<div class="form-box">
-				<div class="button-box">
-					<div id="btn"></div>
-					<button  type="button" class="toggle-btn" onclick="login()">Login In</button>
-					<button  type="button" class="toggle-btn" onclick="register()">Register</button>								
-				</div>
-				<div class="social-icon">
-					<img src="fb.png">
-					<img src="tw.png">
-					<img src="gp.png">
-				</div>			
-				<form id="login" method="post" class="input-group" >
-					
-					<input type="text" name="email" id="email" class="input-field" placeholder=" Email" required="true">
 
-					
-					<input type="password" name="password" class="input-field" placeholder=" Password" required="true">
 
-					<input type="checkbox" class="check-box" id="rememberMe" value="lsRememberMe"><span for>Remeber Password</span>
-					<button type="submit" class="submit-btn">Log In</button>
-				</form>
-				<form id="register" method="post" class="input-group" onsubmit="return checkPw(this)">
-					<input type="text" name="name" class="input-field" placeholder=" Name" required="true" >
 
-					<input type="email" name="email" class="input-field" placeholder=" Email" required="true">
-					
-					<input type="password" name="pw1" id="pw1" class="input-field" placeholder=" Password" required="true">
-					
-					<input type="password" name="pw2" id="pw2" class="input-field" placeholder=" confirmation_pwd" required="true">
-					
-					<input type="checkbox" class="check-box" required="true"><span>I agree to the terms & condittins</span>
-					<button type="submit" class="submit-btn">Register</button>
-				</form>
+<body >
+	<link rel="stylesheet" type="text/css" href="login.css">
+	<div class="dangnhap">
+			<div class="hero">
+				<div class="form-box">
+					<div class="button-box">
+						<div id="btn"></div>
+						<button  type="button" class="toggle-btn" onclick="login()">Login In</button>
+						<button  type="button" class="toggle-btn" onclick="register()">Register</button>								
+					</div>
+					<div class="social-icon">
+						<img src="fb.png">
+						<img src="tw.png">
+						<img src="gp.png">
+					</div>			
+					<form id="login" method="post" class="input-group" >
+						
+						<input type="text" name="email" id="email" class="input-field" placeholder=" Email" required="true">
+
+						
+						<input type="password" name="password" class="input-field" placeholder=" Password" required="true">
+
+						<input type="checkbox" class="check-box" id="rememberMe" value="lsRememberMe"><span for>Remeber Password</span>
+						<button type="submit" class="submit-btn">Log In</button>
+					</form>
+					<form id="register" method="post" class="input-group" onsubmit="return checkPw(this)">
+						<input type="text" name="name" class="input-field" placeholder=" Name" required="true" >
+
+						<input type="email" name="email" class="input-field" placeholder=" Email" required="true">
+						
+						<input type="password" name="pw1" id="pw1" class="input-field" placeholder=" Password" required="true">
+						
+						<input type="password" name="pw2" id="pw2" class="input-field" placeholder=" confirmation_pwd" required="true">
+						
+						<input type="checkbox" class="check-box" required="true"><span>I agree to the terms & condittins</span>
+						<button type="submit" class="submit-btn">Register</button>
+					</form>
+			</div>
 		</div>
 	</div>
+
+</body>
+</html>
 	<script type="text/javascript">
 		var lem1 = document.getElementById("pw1");
 		var lem2 = document.getElementById("pw2");
@@ -98,5 +102,3 @@
 		  }
 }
 	</script>
-</body>
-</html>
