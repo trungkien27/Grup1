@@ -1,5 +1,5 @@
-
-	<footer >
+<link rel="stylesheet" type="text/css" href="footer.css">
+	<footer>
 		<div class="main-content">
 			<div class="left box">
 				<h2>About Us</h2>
@@ -9,15 +9,16 @@
 					 <i class="fas fa-user-graduate"></i> Nguyễn Thành Trung</br>
 					 <i class="fas fa-user-graduate"></i> Nguyễn Trung Kiên</br>
 					 <i class="fas fa-user-graduate"></i> Phan Anh Tuấn</br>
-
-
 					</p>
+
 					 <div class="social">
 					 	<a href="https://www.facebook.com/nbnailboutique" target="_blank"><span class="fab fa-facebook-square"></span></a>
 					 	<a href="https://twitter.com/" target="_blank"><span class="fab fa-twitter"></span></a>
 					 	<a href="https://www.instagram.com/nb_nailboutique/" target="_blank"><span class="fab fa-instagram"></span></a>
 					 	<a href="https://www.youtube.com/channel/UCd8aIzwdaoQ_Abp3frmeZSA" target="_blank"><span class="fab fa-youtube"></span></a>
 					 </div>
+					
+
 				</div>
 			</div>
 
@@ -63,7 +64,6 @@
 				<span class="credit">Created By<a href=""> Grup1</a> | </span>
 				<span class="far fa-copyright"></span><span> 2021 All reserved.</span>
 			</center>
-			
 		</div>
 	</footer>
 </body>

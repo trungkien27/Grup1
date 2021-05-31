@@ -1,75 +1,3 @@
-<<<<<<< HEAD
-<?php
-$title = 'Chi tiết sản phẩm';
-include_once('../home/header.php');
-require_once('../db/dbhelper.php');
-
-$id = 0;
-if(isset($_GET['id'])) {
-	$id = $_GET['id'];
-}
-$sql = "select * from product where id = $id";
-$product = executeResult($sql, true);
-?>
-<!-- body START -->
-<div class="row">
-	<div class="col-md-5">
-		<img src="<?=$product['thumbnail']?>" style="width: 100%">
-	</div>
-	<div class="col-md-7">
-		<p style="font-size: 32px;"><?=$product['title']?></p>
-		<p style="font-size: 32px;">Tra Gop: <?=$product['price']?></p>
-		<p style="font-size: 32px; color: red"><?=number_format($product['price'], 0, '', '.')?></p>
-		<button class="btn btn-success" style="width: 100%; padding: 10px; font-size: 26px;" onclick="addToCart()">Add to cart</button>
-	</div>
-</div>
-<!-- body END -->
-<script type="text/javascript">
-	function addToCart() {
-		var id = '<?=$product['id']?>'
-		var thumbnail = '<?=$product['thumbnail']?>'
-		var title = '<?=$product['title']?>'
-		var price = '<?=$product['price']?>'
-
-		var isFind = false
-		for (var i = 0; i < cartList.length; i++) {
-			if(cartList[i].id == id) {
-				cartList[i].num++
-				isFind = true
-				break
-			}
-		}
-
-		if(!isFind) {
-			cartList.push({
-				"id": id,
-				"thumbnail": thumbnail,
-				"title": title,
-				"price": price,
-				"num": 1
-			})
-		}
-
-		console.log(cartList)
-
-		var now = new Date();
-		var time = now.getTime();
-		var expireTime = time + 30*24*60*60*1000;
-		now.setTime(expireTime);
-
-		document.cookie = "cart="+JSON.stringify(cartList)+";path=/;expires="+now.toUTCString()
-
-		//Dem so phan tru trong gio hang
-		var total = 0
-		for (var i = 0; i < cartList.length; i++) {
-			total += cartList[i].num
-		}
-		$('#cart_num').html(total)
-	}
-</script>
-<?php
-include_once('../home/footer.php');
-=======
 
 <?php 
 	require_once('../layout/head.php');
@@ -87,7 +15,7 @@ include_once('../home/footer.php');
 		<p  style="font-size: 26px;color: black;"><?=$productList['title']?></p>
 		<p style="font-size: 26px;color: black;">Còn lại: <?=$productList['quantity']?></p>
 		<p style="font-size: 26px; color: red"><?=number_format($productList['price'], 0, '', '.')?> VND</p>
-		<input type="number" name="soluong" min="1" style="width: 100px;color: black;margin-bottom: 30px;">
+		<input type="int" name="soluong" id="soluong" min="1" style="width: 100px;color: black;margin-bottom: 30px;" required="true">
 		<div class="col-md-12" style="display: flex;">
 			<button class="btn btn-success col-md-6" onclick="addToCart(<?=$id?>)" style="width: 100%; font-size: 26px;height:50px;margin-top: 10px;">Add to cart</button>
 			<a href="checkout.php" class="col-md-6">
@@ -106,7 +34,6 @@ include_once('../home/footer.php');
 			<h2 style="color: black;">Một số sản phẩm tương tự</h2>
 		</div>
 		<?php
-			
 			$sanpham = executeResult('select * from product where category_id =' .$productList['category_id'],);
 			if ($sanpham != null) {
 				foreach ($sanpham as $item) {
@@ -123,19 +50,25 @@ include_once('../home/footer.php');
 </div>
 
 <script type="text/javascript">
-	function addToCart(id) {
-		$.post('api-product.php', {
-			'action': 'add',
-			'id': id ,
-			'num': 1
-		}, function(data) {
-			location.reload()
-		})
+	function addToCart(id) {	
+		if ($('#soluong').val() >= 1 && $('#soluong').val() < <?=$productList['quantity']?>) {	
+			$.post('api-product.php', {
+					'action': 'add',
+					'id': id ,
+					'num': $('#soluong').val()
+				}, function(data) {
+					location.reload()
+				})
+		}else if ($('#soluong').val() > <?=$productList['quantity']?>) {
+			confirm('Sản phẩm không đủ');
+		}else{
+			confirm('Vui lòng nhập lại số liệu ')
+		}
 	}
+
 </script>
 
 
 <?php 
 	require_once('../layout/footer.php');
->>>>>>> 3758709674accf4e2d1615a4b802b031a392826a
 ?>
