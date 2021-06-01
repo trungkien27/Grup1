@@ -2,12 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>logign</title>
+	<title>Nail | login</title>
 </head>
-
-
-
-<body >
+<body background="baner.jpg">
 	<link rel="stylesheet" type="text/css" href="login.css">
 	<div class="dangnhap">
 			<div class="hero">
