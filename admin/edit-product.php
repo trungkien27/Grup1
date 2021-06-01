@@ -37,6 +37,7 @@ require_once('form-product.php');
 							<th>Tên sản phẩm</th>
 							<th>Hình ảnh</th>
 							<th>Giá bán</th>
+							<th>Số lượng </th>
 							<th>Ngày cập nhật</th>
 							<th></th>
 							<th></th>
@@ -62,7 +63,7 @@ require_once('form-product.php');
 	$totalPage = ceil($total/$num_page);
 
 	//lay tu product o vi tri index, lay num_page phan tu
-	$sql = "select id, title, thumbnail, price, updated_at from product limit ".$index.','.$num_page;
+	$sql = "select id, title, thumbnail, price, quantity, updated_at from product limit ".$index.','.$num_page;
 	$productList = executeResult($sql);
 
 	$count = $index;
@@ -74,6 +75,7 @@ require_once('form-product.php');
 				<td>'.$item['title'].'</td>
 				<td><a href="product-detail.php?id='.$item['id'].'"><img src="'.$item['thumbnail'].'" style="width: 160px;"/></a></td>
 				<td style="width:110px;">'.$item['price'].'</td>
+				<td style="width:110px;">'.$item['quantity'].'</td>
 				<td style="width:200px;">'.$item['updated_at'].'</td>
 				<td style="width:110px;"><a href="add-product.php?id='.$item['id'].'"><button class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sửa</button></a></td>
 				<td style="width:110px;"><button class="btn btn-danger" onclick="deleteProduct('.$item['id'].')"><i class="fa fa-trash-o" aria-hidden="true"></i>Xóa</button></td>

@@ -34,6 +34,10 @@ if ($id > 0) {
 						<input required="true" min="0.01" step="0.01" type="number" class="form-control" id="price" name="price" value="<?=($thisProduct != null)?$thisProduct['price']:''?>">
 					</div>
 					<div class="form-group">
+						<label for="price">Số lượng: </label>
+						<input required="true" min="0" step="1" type="number" class="form-control" id="quantity" name="quantity" value="<?=($thisProduct != null)?$thisProduct['quantity']:''?>">
+					</div>
+					<div class="form-group">
 						<label for="category_id">Danh mục sản phẩm:</label>
 						<select required="true" class="form-control" id="category_id" name="category_id">
 							<option value="">-- Chọn danh mục --</option>
