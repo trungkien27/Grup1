@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
+	<title></title>
 	<meta charset="utf-8">				
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="robots" content="all,follow">
@@ -58,57 +58,49 @@
 		 <div class="container">
 		 	<ul class="navbar-nav" style="color: #000000; font-weight: bold;">
 			    <li class="nav-item active">
-      				<a  class="nav-link" href="../home/trangchu.php">Trang Chủ</a>	
+      				<a  class="nav-link" href="../home/trangchu.php">TRANG CHỦ </a>	
       			</li>
-      			 <li class="nav-item active">
-      				<a class="nav-link" href="#">Giới Thiệu</a>	
-      			</li>	     	
 	    		<li class="nav-item active dropdown">
-	      			<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-	        		Dịch Vụ
-	      			</a>
-	      	<div class="dropdown-menu" style="border: none; font-weight: bold;">
-		        <a style="font-weight: bold;" class="dropdown-item" href="#">Cải tiến móng</a>
-		        <a style="font-weight: bold;" class="dropdown-item" href="#">Cắt sửa móng tay & móng chân</a>
-		        <a style="font-weight: bold;" class="dropdown-item" href="#">Waxing</a>
-		        <a style="font-weight: bold;" class="dropdown-item" href="#">Thêm Ons</a>
-		     </div>
-	    </li>
-	    <li class="nav-item active">
-	      <a class="nav-link" href="#">Cửa Hàng</a>
-	    </li>
-	    <li class="nav-item active">
-	      <a class="nav-link" href="#">Hình Ảnh Chỉa Sẻ</a>
-	    </li>
-	   <li class="nav-item active">
-	      <a class="nav-link" href="../home/contact-us.php">Liên Hệ</a>
-	    </li>
-	    <li class="nav-item active">
-	      <a class="nav-link" href="#">Join Our Team</a>
-	    </li>
-
-	    <li class="nav-item active">
-	      <a class="nav-link" href="../user/login.php"><i class="bi bi-door-open-fill"></i>Đăng Nhập</a>
-	    </li>
-	  </ul>
+	      			<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">SẢN PHẨM </a>
+				      	<div class="dropdown-menu" style="border: none; font-weight: bold;">
+				      		<!-- list do ra tu database-->
+					        <a style="font-weight: bold;" class="dropdown-item" href="#">Phụ kiện chăm sóc móng </a>
+					        <a style="font-weight: bold;" class="dropdown-item" href="#">Cắt sửa móng tay & móng chân</a>
+					        <a style="font-weight: bold;" class="dropdown-item" href="#">Waxing</a>
+					        <a style="font-weight: bold;" class="dropdown-item" href="#">Thêm Ons</a>
+					     </div>
+	  			</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">THƯ VIỆN ẢNH </a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">TIPS CHIA SẺ </a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="../home/contact-us.php">LIÊN HỆ </a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="../user/login.php"><i class="bi bi-door-open-fill"></i> Đăng Nhập</a>
+				</li>
+			</ul>
 	  
-	  <?php
-		  	$cart = [];
-			if(isset($_COOKIE['cart'])) {
-				$json = $_COOKIE['cart'];
-				$cart = json_decode($json, true);
-			}
-			$count = 0;
-			foreach ($cart as $item) {
-				$count += $item['num'];
-			}
-		  ?>
+<?php
+  	$cart = [];
+	if(isset($_COOKIE['cart'])) {
+		$json = $_COOKIE['cart'];
+		$cart = json_decode($json, true);
+	}
+	$count = 0;
+	foreach ($cart as $item) {
+		$count += $item['num'];
+	}
+?>
 			<a href="cart.php">
 				<button type="button" class="btn btn-outline-danger btn-sm" style="font-size: 20px;border: none;">
 					 <i class="bi bi-cart3"></i><span style="font-weight: bold; color: #000000; "> <?=$count?></span>
 				</button>
 			</a>		
-	</nav>
+		</nav>
 	</header>
 	
 
