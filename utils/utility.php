@@ -22,10 +22,10 @@ function getGet($key) {
 
 	return removeSpecialCharacter($value);
 }
-<<<<<<< HEAD
+
 
 function getMD5Security($pwd) {
-	return md5(md5($pwd).MD5_PRIMARY_KEY);
+	return md5(md5($pwd).MD5_PRIVATE_KEY);
 }
 
 function validateToken() {
@@ -50,8 +50,3 @@ function validateToken() {
 	return false;
 }
 
-=======
-function getMd5Security($pwd) {
-	return md5(md5($pwd).MD5_PRIVATE_KEY);
-}
->>>>>>> 4c3d037098fd5335ae2994a68a585c2ef201d403

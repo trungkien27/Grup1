@@ -1,8 +1,8 @@
 
 <?php 
-	require_once('../layout/head.php');
-	require_once('../db/dbhelper.php');
-	require_once('../utity/utility.php');
+	require_once('home/header.php');
+	require_once('db/dbhelper.php');
+	require_once('utils/utility.php');
 	$id = getGet('id');
 	$productList = executeResult('select * from product where id = '.$id, true);
 ?>
@@ -70,5 +70,5 @@
 
 
 <?php 
-	require_once('../layout/footer.php');
+	require_once('home/footer.php');
 ?>

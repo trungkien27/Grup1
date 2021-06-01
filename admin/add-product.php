@@ -1,5 +1,6 @@
 <?php
 require_once('form-product.php');
+include_once('admin-header.php');
 
 $categoryList = executeResult('select * from category');
 $id = getGet('id');
@@ -11,11 +12,8 @@ if ($id > 0) {
 
 ?>
 
-<?php
-include_once('../home/header.php');
-?>
 
-	<div class="container">
+	<div class="container" style="width: 90%;">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h2 class="text-center">Trang chỉnh sửa sản phẩm </h2>
@@ -28,12 +26,12 @@ include_once('../home/header.php');
 						<input type="text" name="id" value="<?=($thisProduct != null)?$thisProduct['id']:''?>" style="display: none;">
 					</div>
 					<div class="form-group">
-						<label for="thumbnail">Hình Ảnh:</label>
+						<label for="thumbnail">Hình ảnh:</label>
 						<input required="true" type="text" class="form-control" id="thumbnail" name="thumbnail" value="<?=($thisProduct != null)?$thisProduct['thumbnail']:''?>">
 					</div>
 					<div class="form-group">
 						<label for="price">Giá:</label>
-						<input required="true" min="0" type="number" class="form-control" id="price" name="price" value="<?=($thisProduct != null)?$thisProduct['price']:''?>">
+						<input required="true" min="0.01" step="0.01" type="number" class="form-control" id="price" name="price" value="<?=($thisProduct != null)?$thisProduct['price']:''?>">
 					</div>
 					<div class="form-group">
 						<label for="category_id">Danh mục sản phẩm:</label>
@@ -52,10 +50,10 @@ include_once('../home/header.php');
 					</div>
 					<div class="form-group">
 						<label for="content">Content:</label>
-						<textarea class="form-control" id="content" name="content"<?=($thisProduct != null)?$thisProduct['content']:''?>></textarea>
+						<textarea class="form-control" id="content" name="content" rows="5"><?=($thisProduct != null)?$thisProduct['content']:''?></textarea>
 					</div>
-					<a href="edit-product.php"><button class="btn btn-success">Lưu</button></a>
-					<a href="edit-product.php"><button type="button" class="btn btn-info" style="float: right;">Quay lại </button></a>
+					<a href="edit-product.php"><button class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>Lưu</button></a>
+					<a href="edit-product.php"><button type="button" class="btn btn-info" style="float: right;"><i class="fa fa-times" aria-hidden="true"></i>Quay lại </button></a>
 				</form>
 			</div>
 		</div>
@@ -80,3 +78,7 @@ include_once('../home/header.php');
       });
 	});
 </script>
+
+<?php
+include_once('admin-footer.php');
+?>

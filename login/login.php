@@ -1,15 +1,14 @@
 <?php
-
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
+require_once('form-login.php');
 
 if(validateToken() != null) {
 	header('Location: ../admin/list-product.php');
 	die();
 }
-
-require_once('form-login.php');
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

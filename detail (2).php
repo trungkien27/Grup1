@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 $title = 'Chi tiết sản phẩm';
 include_once('../home/header.php');
@@ -69,12 +69,12 @@ $product = executeResult($sql, true);
 </script>
 <?php
 include_once('../home/footer.php');
-=======
+?>
 
 <?php 
 	require_once('../layout/head.php');
 	require_once('../db/dbhelper.php');
-	require_once('../utity/utility.php');
+	require_once('../utils/utility.php');
 	$id = getGet('id');
 	$productList = executeResult('select * from product where id = '.$id, true);
 ?>
@@ -100,7 +100,7 @@ include_once('../home/footer.php');
 		<?=$productList['content']?>
 	</div>
 </div>
-<div class="container" style="90%">
+<div class="container" style="width: 90%">
 	<div class="row">
 		<div class="col-md-12">
 			<h2 style="color: black;">Một số sản phẩm tương tự</h2>
@@ -137,5 +137,4 @@ include_once('../home/footer.php');
 
 <?php 
 	require_once('../layout/footer.php');
->>>>>>> 3758709674accf4e2d1615a4b802b031a392826a
 ?>

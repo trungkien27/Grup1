@@ -2,20 +2,35 @@
 session_start();
 
 $title = 'Edit Page';
-include_once('../home/header.php');
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
+
+include_once('admin-header.php');
 require_once('form-product.php');
 ?>
 <!-- body START -->
-
+	<div class="container" style="margin-top: 10px;">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h2 class="text-center">Quản lý sản phẩm</h2>
 			</div>
 			<div class="panel-body">
-				<a href="add-product.php"><button class="btn btn-info">Thêm sản phẩm mới</button></a>
-				<table class="table table-bordered">
+				<div class="row">
+					<div class="col-md-3">
+						<select style="height: 35px;width: 250px;">
+							<option> Sắp xếp theo </option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<form method="get">
+							<input type="text" name="search" class="form-control"placeholder="Tìm kiếm theo tên ">
+						</form>
+					</div>
+					<div class="col-md-3">
+						<a href="add-product.php"><button class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i>Thêm sản phẩm mới</button></a>		
+					</div>
+				</div>
+				<table class="table table-bordered" style="margin-top: 10px;">
 					<thead>
 						<tr>
 							<th>STT</th>
@@ -29,7 +44,7 @@ require_once('form-product.php');
 					</thead>
 					<tbody>
 <?php 
-	$num_page = 4;
+	$num_page = 6;
 	$page = 1;
 	if (isset($_GET['page'])) {
 		$page = $_GET['page'];
@@ -55,16 +70,16 @@ require_once('form-product.php');
 	// $count = 0;
 	foreach ($productList as $item) {
 		echo '<tr>
-				<td>'.++$count.'</td>
+				<td style="width:70px;">'.++$count.'</td>
 				<td>'.$item['title'].'</td>
 				<td><a href="product-detail.php?id='.$item['id'].'"><img src="'.$item['thumbnail'].'" style="width: 160px;"/></a></td>
-				<td>'.$item['price'].'</td>
-				<td>'.$item['updated_at'].'</td>
-				<td><a href="add-product.php?id='.$item['id'].'"><button class="btn btn-warning">Sửa sản phẩm</button></a></td>
-				<td><button class="btn btn-danger" onclick="deleteProduct('.$item['id'].')">Xóa sản phẩm</button></td>
+				<td style="width:110px;">'.$item['price'].'</td>
+				<td style="width:200px;">'.$item['updated_at'].'</td>
+				<td style="width:110px;"><a href="add-product.php?id='.$item['id'].'"><button class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sửa</button></a></td>
+				<td style="width:110px;"><button class="btn btn-danger" onclick="deleteProduct('.$item['id'].')"><i class="fa fa-trash-o" aria-hidden="true"></i>Xóa</button></td>
 			</tr>';
 }
-?>
+?> 
 					</tbody>
 				</table>
 				<ul class="pagination">
@@ -102,6 +117,7 @@ require_once('form-product.php');
 			</div>
 		</div>
 	</div>
+</div>
 <script type="text/javascript">
 	function deleteProduct(id) {
 		option = confirm('Bạn chắc chắn muốn xóa sản phẩm này ??')

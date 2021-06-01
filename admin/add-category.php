@@ -1,5 +1,6 @@
 <?php
 require_once('form-category.php');
+require_once('admin-header.php');
 
 $categoryList = executeResult('select * from category');
 $id = getGet('id');
@@ -11,11 +12,7 @@ if ($id > 0) {
 
 ?>
 
-<?php
-include_once('../home/header.php');
-?>
-
-	<div class="container">
+	<div class="container" style="width: 90%;">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h2 class="text-center">Trang chỉnh sửa danh mục</h2>
@@ -27,9 +24,10 @@ include_once('../home/header.php');
 						<input required="true" type="text" class="form-control" id="title" name="title" value="<?=($thisCategory != null)?$thisCategory['title']:''?>">
 						<input type="text" name="id" value="<?=($thisCategory != null)?$thisCategory['id']:''?>" style="display: none;">
 					</div>
-					<a href="edit-category.php"><button class="btn btn-success">Lưu</button></a>
-					<a href="edit-category.php"><button type="button" class="btn btn-info" style="float: right;">Quay lại </button></a>
+					<a href="edit-category.php"><button class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>Lưu</button></a>
+					<a href="edit-category.php"><button type="button" class="btn btn-info" style="float: right;"><i class="fa fa-times" aria-hidden="true"></i>Quay lại </button></a>
 				</form>
 			</div>
 		</div>
 	</div>
+

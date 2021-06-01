@@ -2,43 +2,32 @@
 
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
-require_once('form-category.php');
 
+require_once('form-category.php');
+require_once('admin-header.php');
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Category</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
-<body>
+
 	<div class="container" style="margin-top: 10px;">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h2 class="text-center">Quản lý danh mục sản phẩm </h2>
 			</div>
 			<div class="panel-body">
-				<a href="add-category.php"><button class="btn btn-success">Thêm danh mục sản phẩm mới </button></a>
-				<table class="table table-bordered" style="margin-top: 20px;">
+				<a href="add-category.php"><button class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i>Thêm danh mục sản phẩm mới</button></a>	
+				<table class="table table-bordered" style="margin-top: 10px;">
 					<thead>
 						<tr>
-							<th>No</th>
-							<th>Title</th>
-							<th>Created At</th>
-							<th>Updated At</th>
+							<th>STT</th>
+							<th>Tên </th>
+							<th>Ngày tạo </th>
+							<th>Ngày cập nhật </th>
 							<th></th>
 							<th></th>
 						</tr>
 					</thead>
 					<tbody>
 <?php 
-	$num_page = 5;
+	$num_page = 10;
 	$page = 1;
 	if (isset($_GET['page'])) {
 		$page = $_GET['page'];
@@ -64,12 +53,12 @@ require_once('form-category.php');
 	// $count = 0;
 	foreach ($categoryList as $item) {
 		echo '<tr>
-				<td>'.++$count.'</td>
+				<td style="width:70px;">'.++$count.'</td>
 				<td>'.$item['title'].'</td>
-				<td>'.$item['created_at'].'</td>
-				<td>'.$item['updated_at'].'</td>
-				<td><a href="add-category.php?id='.$item['id'].'"><button class="btn btn-warning">Sửa danh mục </button></a></td>
-				<td><button class="btn btn-danger" onclick="deleteCategory('.$item['id'].')">Xóa danh mục</button></td>
+				<td style="width:200px;">'.$item['created_at'].'</td>
+				<td style="width:200px;">'.$item['updated_at'].'</td>
+				<td style="width:110px;"><a href="add-category.php?id='.$item['id'].'"><button class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sửa</button></a></td>
+				<td style="width:110px;"><button class="btn btn-danger" onclick="deleteCategory('.$item['id'].')"><i class="fa fa-trash-o" aria-hidden="true"></i>Xóa</button></td>
 			</tr>';
 }
 ?>

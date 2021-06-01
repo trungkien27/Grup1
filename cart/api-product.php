@@ -1,5 +1,5 @@
 <?php 
-	require_once('../utity/utility.php');
+	require_once('../utils/utility.php');
 if(!empty($_POST)) {
 	$action = getPost('action');
 	$id = getPost('id');
