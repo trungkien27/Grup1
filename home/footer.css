@@ -80,6 +80,7 @@ footer {
 	border-radius: 50%;
 	transition: 0.3s;
 	cursor: pointer;
+    color: #fff;
 }
 .center .content .fas:hover {
 	background: #f12020; 	
@@ -94,6 +95,10 @@ footer {
 }
  .content-ul {
 	display: flex;
+    
+}
+.content-ul ul li {
+	color: #fff;
 }
 .bottom center{
 	padding: 5px;

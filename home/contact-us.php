@@ -1,4 +1,5 @@
 <?php
+	$title = "Nail | Contact-Us";
 	include_once('../home/header.php');
 ?>
 <link rel="stylesheet" type="text/css" href="contact.css">

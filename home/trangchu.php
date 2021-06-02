@@ -1,7 +1,10 @@
 
 <?php
+	$title = "Nail | Home";
 	include_once('../home/header.php');
+	
 ?> 
+
 	<link rel="stylesheet" type="text/css" href="home.css">
 	<section class="hero1" style="font-size: 10px;">
 		<div class="text-wrapper">
