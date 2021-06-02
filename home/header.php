@@ -63,7 +63,7 @@
       				<a  class="nav-link" href="../home/trangchu.php">TRANG CHỦ </a>	
       			</li>
       			 <li class="nav-item active">
-      				<a type="button" onclick="changePageTitle()" class="nav-link" href="../home/about.php">Giới Thiệu</a>	
+      				<a type="button" onclick="changePageTitle()" class="nav-link" href="../home/about.php">GIỚI THIỆU </a>	
       			</li>	     
 	    		<li class="nav-item active dropdown">
 	      			<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">SẢN PHẨM </a>

@@ -9,7 +9,7 @@
 	<section class="hero1" style="font-size: 10px;">
 		<div class="text-wrapper">
 			<h1 class="headline">Nail Boutique</h1>
-			<h2 class="sub-headline">Nails are not just beauty,it is a lifestyle.</h2>
+			<h2 class="sub-headline">Nails are not just beauty, it is a lifestyle.</h2>
 		</div>
 	</section>
 	</div>
@@ -55,7 +55,7 @@
 		<div class="bgimg-3">
 			<div class="caption">
 					<span class="border">
-						<div class="container" style="text-align: center;">
+						<div class="container" style="text-align: justify;">
 							<img src="mask.png" >
 							<h1>Phản hồi của chúng tôi đối  với COVID19</h1>
 						</div>
