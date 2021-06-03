@@ -50,10 +50,14 @@ if (!empty($_GET)) {
 	if (isset($_GET['search'])) {
 		$search = $_GET['search'];
 
-
+	$sql = 'select * from product where title like "%'.$_GET['search'].'%"';
+	$productList = executeResult($sql);
 	}
 }
 
+?>
+
+<?php
 
 	$num_page = 6;
 	$page = 1;
@@ -73,9 +77,7 @@ if (!empty($_GET)) {
 	$totalPage = ceil($total/$num_page);
 
 	//lay tu product o vi tri index, lay num_page phan tu
-	// $sql = "select id, title, thumbnail, price, quantity, updated_at from product limit ".$index.','.$num_page;
-
-	$sql = 'select id, title, thumbnail, price, quantity, updated_at from product where title like "%'.$_GET['search'].'%" limit'.$index.','.$num_page;
+	$sql = "select id, title, thumbnail, price, quantity, updated_at from product limit ".$index.','.$num_page;
 	$productList = executeResult($sql);
 
 	$count = $index;

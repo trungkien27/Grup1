@@ -28,8 +28,9 @@ if(!empty($_POST)) {
 		category_id int references category (id),
 		title varchar(50),
 		price float,
+		quantity int not null,
 		thumbnail varchar(200),
-		content varchar(500),
+		content varchar(2000),
 		created_at datetime,
 		updated_at datetime
 	)";
@@ -48,9 +49,9 @@ if(!empty($_POST)) {
 		id int primary key auto_increment,
 		user_id int references user (id),
 		order_date datetime,
-		note varchar(500),
 		address varchar(200),
 		phone_number varchar(20),
+		note varchar(500),
 		created_at datetime,
 		updated_at datetime
 	)";

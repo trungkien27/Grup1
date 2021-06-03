@@ -1,6 +1,6 @@
 <?php
 	$title = "Nail | About";
-	include_once('../home/header.php');
+	include_once('../layout/header.php');
 ?> 
 <link rel="stylesheet" type="text/css" href="about.css">
 	<div class="contai1">
@@ -74,5 +74,5 @@
 	</div>
 
 <?php
-	include_once('../home/footer.php');
+	include_once('../layout/footer.php');
 ?>

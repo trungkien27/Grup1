@@ -2,7 +2,7 @@
 session_start();
 
 $title = 'Product Page';
-include_once('../home/header.php');
+include_once('../layout/header.php');
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
 // include_once('code-cart.php');
@@ -10,7 +10,7 @@ require_once('../utils/utility.php');
 $productList = executeResult('select * from product');
 ?>
 <!-- body START -->
-<div class="panel panel-primary">
+<div class="panel panel-primary" style="margin-top:7%;">
 	<div class="panel-heading">
 		Tìm kiếm sản phẩm
 		<form method="get">
@@ -32,8 +32,8 @@ if (!empty($_GET)) {
 
 foreach ($productList as $item) {
 	echo '<div class="col-md-3" style="border: solid 2px #e9e6e6; padding: 20px;">
-			<a href="detail.php?id='.$item['id'].'"><img src="'.$item['thumbnail'].'" style="width: 100%"></a>
-			<a href="detail.php?id='.$item['id'].'"><p style="font-size: 16px;">'.$item['title'].'</p></a>
+			<a href="../cart/detail.php?id='.$item['id'].'"><img src="'.$item['thumbnail'].'" style="width: 100%"></a>
+			<a href="../cart/detail.php?id='.$item['id'].'"><p style="font-size: 16px;">'.$item['title'].'</p></a>
 			<p style="font-size: 16px; color: red">'.number_format($item['price'], 0, '', '.').' VND</p>
 			<button class="btn btn-success" onclick="addToCart(<?=$id?>)">Thêm vào giỏ</button>
 		</div>';
@@ -55,5 +55,5 @@ foreach ($productList as $item) {
 
 <!-- body END -->
 <?php
-include_once('../home/footer.php');
+include_once('../layout/footer.php');
 ?>

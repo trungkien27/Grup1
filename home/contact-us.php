@@ -1,6 +1,6 @@
 <?php
 	$title = "Nail | Contact-Us";
-	include_once('../home/header.php');
+	include_once('../layout/header.php');
 ?>
 <link rel="stylesheet" type="text/css" href="contact.css">
 	<div class="contact-warp">
@@ -39,6 +39,6 @@
 		</div>
 	</div>
 <?php
-	include_once('../home/footer.php');
+	include_once('../layout/footer.php');
 ?>
 			

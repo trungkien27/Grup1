@@ -1,6 +1,6 @@
 <?php
 require_once('form-category.php');
-require_once('admin-header.php');
+require_once('../layout/admin-header.php');
 
 $categoryList = executeResult('select * from category');
 $id = getGet('id');

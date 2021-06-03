@@ -57,7 +57,7 @@
 				<div class="navbar">
 					<ul>
 						<li>
-							<a href=""><button type="button" class="btn btn-success"><i class="fa fa-home" aria-hidden="true"></i>Trang chủ </button></a>
+							<a href="../home/trangchu.php"><button type="button" class="btn btn-success"><i class="fa fa-home" aria-hidden="true"></i>Trang chủ </button></a>
 						</li>
 						<li>
 							<a href="edit-category.php"><button type="button" class="btn btn-primary"><i class="fa fa-list" aria-hidden="true"></i>Danh mục sản phẩm</button></a>

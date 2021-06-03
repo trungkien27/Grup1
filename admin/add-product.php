@@ -1,6 +1,6 @@
 <?php
 require_once('form-product.php');
-include_once('admin-header.php');
+include_once('../layout/admin-header.php');
 
 $categoryList = executeResult('select * from category');
 $id = getGet('id');
@@ -84,5 +84,5 @@ if ($id > 0) {
 </script>
 
 <?php
-include_once('admin-footer.php');
+include_once('../layout/admin-footer.php');
 ?>

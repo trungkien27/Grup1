@@ -1,7 +1,7 @@
 
 <?php
 	$title = "Nail | Home";
-	include_once('../home/header.php');
+	include_once('../layout/header.php');
 	
 ?> 
 
@@ -95,5 +95,5 @@
 			</div>
 		</div>
 <?php
-	include_once('../home/footer.php');
+	include_once('../layout/footer.php');
 ?>

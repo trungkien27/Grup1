@@ -4,7 +4,7 @@ require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
 
 require_once('form-category.php');
-require_once('admin-header.php');
+require_once('../layout/admin-header.php');
 ?>
 
 	<div class="container" style="margin-top: 10px;">

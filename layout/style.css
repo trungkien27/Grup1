@@ -1,7 +1,30 @@
 .container	{
 	font-size: 20px;
-	font-family: poller_oneregular;
 	/*background-color: #e1f2da;*/
+}
+
+/*cho trang header*/
+.navbar .navbar-expand-lg{
+	position: fixed;
+ 	top: 0;
+}
+.heading ul {
+	list-style-type: none;
+	display: flex;
+}
+
+.heading ul li {
+	text-transform: bold;
+	margin-right: 30px;
+	padding-top: 17px;
+}
+
+.heading ul li a {
+	color: black;
+	font-weight: bold;
+	font-family: "Cambria";
+	font-size: 21px;
+	text-transform: uppercase;
 }
 
 h3 {
@@ -15,6 +38,7 @@ h3 span {
 	text-align: center;
 }
 
+/*cho trang tips*/
 .title	{
 	text-transform: uppercase;
 	font-weight: bold;
@@ -35,10 +59,11 @@ div.tip ul li {
 	margin-bottom: 20px;
 }
 
-ul li p {
+div.tip ul li p {
 	margin-bottom: 100px;
 	text-align: justify;
 }
+
 
 .content-right{
 	display: block;
@@ -85,6 +110,7 @@ form input, form textarea {
 	width: 100%;
 }
 
+/*cho trang gallery*/
 div.gallery {
 	display: flex;
 	width: 100%;

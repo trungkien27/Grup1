@@ -3,6 +3,7 @@ include_once('../layout/header.php');
 
 ?>
 
+<link rel="stylesheet" type="text/css" href="style.css">
 <!-- body START -->
 		<h1><span>5 mẫu đơn giản tự làm ở nhà</span></h1>
 			<div class="article">

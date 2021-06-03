@@ -1,5 +1,6 @@
 <?php 
-	require_once('../utils/utility.php');
+require_once('../utils/utility.php');
+
 if(!empty($_POST)) {
 	$action = getPost('action');
 	$id = getPost('id');
@@ -30,14 +31,16 @@ if(!empty($_POST)) {
 			}
 			setcookie('cart', json_encode($cart), time() + 30*24*60*60, '/');
 			break;
+			
 		case 'delete':
 			for ($i=0; $i < count($cart); $i++) { 
 				if($cart[$i]['id'] == $id) {
+					//xóa ở $cart, vị trí index $1, xóa 1 phần tử 
 					array_splice($cart, $i, 1);
 					break;
 				}
 			}
 			setcookie('cart', json_encode($cart), time() + 30*24*60*60, '/');
-		break;
+			break;
 	}
 }
