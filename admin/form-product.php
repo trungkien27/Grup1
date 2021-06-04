@@ -38,7 +38,7 @@ function addProduct() {
 	
 	$created_at = $updated_at = date('Y-m-d H:i:s');
 		
-	$sql = "insert into product(title, price, quantity, thumbnail, content, category_id, created_at, updated_at) values ('$title', '$price', '$quantity' '$thumbnail', '$content', $category_id, '$created_at', '$updated_at')";
+	$sql = "insert into product (title, price, quantity, thumbnail, content, category_id, created_at, updated_at) values ('$title', '$price', '$quantity', '$thumbnail', '$content', $category_id, '$created_at', '$updated_at')";
 	execute($sql);
 	header('Location: edit-product.php');
 }

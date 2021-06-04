@@ -1,6 +1,6 @@
-<link rel="stylesheet" type="text/css" href="footer.css">
+<link rel="stylesheet" type="text/css" href="../layout/footer.css">
 	<footer>
-		<div class="main-content">
+		<div class="main-content" style="margin-top:30%;">
 			<div class="left box">
 				<h2>VỀ CHÚNG TÔI </h2>
 				<div class="content">
@@ -58,7 +58,7 @@
 		</div>
 		<div class="bottom">
 			<center>
-				<span class="credit">Created By<a href="">GROUP 1 </a> | </span>
+				<span class="credit">Created By <a href=""> GROUP 1 </a> | </span>
 				<span class="far fa-copyright"></span><span> 2021 All reserved.</span>
 			</center>
 		</div>

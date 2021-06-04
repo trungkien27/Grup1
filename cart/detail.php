@@ -27,7 +27,7 @@ if (isset($_COOKIE['cart']))
 			<p style="font-size: 26px;color: black;"><?=$product['title']?></p>
 			<p style="font-size: 26px;color: black;">Còn lại: <?=$product['quantity']?></p>
 			<p style="font-size: 26px; color: red"><?=number_format($product['price'], 0, '', '.')?> VND</p>
-			<input type="int" name="soluong" id="soluong" min="1" style="width: 100px;color: black;margin-bottom: 30px;" required="true">
+			<input type="number" name="soluong" id="soluong" value="1" min="1" step="1" style="width: 100px;color: black;margin-bottom: 30px;" required="true">
 			<div class="col-md-12" style="display: flex;">
 				<button class="btn btn-success col-md-6" onclick="addToCart(<?=$id?>)" style="width: 100%; font-size: 26px;height:50px;margin-top: 10px;">Add to cart</button>
 				<a href="checkout.php" class="col-md-6">
@@ -66,13 +66,15 @@ if (isset($_COOKIE['cart']))
 <!-- sp tuong tu END -->
 
 <script type="text/javascript">
-
-
 	function addToCart(id) {
+		if ($('#soluong').val() < 0) {
+			alert('Vui lòng nhập số lượng > 0');
+			return false;
+		}
 		$.post('api-product.php', {
 			'action': 'add',
 			'id': id,
-			'num': 1
+			'num': $('#soluong').val()
 		}, function(data) {
 			location.reload()
 		})

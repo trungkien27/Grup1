@@ -56,7 +56,9 @@ if ($id > 0) {
 						<label for="content">Content:</label>
 						<textarea class="form-control" id="content" name="content" rows="5"><?=($thisProduct != null)?$thisProduct['content']:''?></textarea>
 					</div>
-					<a href="edit-product.php"><button class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>Lưu</button></a>
+					<!-- <a href="edit-product.php"> -->
+						<button class="btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i>Lưu</button>
+					<!-- </a> -->
 					<a href="edit-product.php"><button type="button" class="btn btn-info" style="float: right;"><i class="fa fa-times" aria-hidden="true"></i>Quay lại </button></a>
 				</form>
 			</div>

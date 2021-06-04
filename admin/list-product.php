@@ -1,25 +1,26 @@
 <?php
-session_start();
+// session_start();
 
 $title = 'Product Page';
 include_once('../layout/header.php');
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
-// include_once('code-cart.php');
+require_once('../cart/api-product.php');
 
 $productList = executeResult('select * from product');
 ?>
 <!-- body START -->
-<div class="panel panel-primary" style="margin-top:7%;">
-	<div class="panel-heading">
-		Tìm kiếm sản phẩm
-		<form method="get">
-			<input type="text" name="search" class="form-control" style="margin-top: 15px; margin-bottom: 15px;" placeholder="Tìm kiếm theo tên">
-		</form>
+<div class="container">
+	<div class="panel panel-primary" style="margin-top:7%;">
+		<div class="panel-heading">
+			Tìm sản phẩm
+			<form method="get">
+				<input type="text" name="search" class="form-control" style="margin-top: 15px; margin-bottom: 15px; width:50%;" placeholder="Tìm kiếm theo tên">
+			</form>
+		</div>
 	</div>
-</div>
 
-<div class="row">
+	<div class="row">
 <?php
 if (!empty($_GET)) {
 	if (isset($_GET['search'])) {
@@ -39,20 +40,21 @@ foreach ($productList as $item) {
 		</div>';
 }
 ?>
-
+	
+	</div>
 </div>
+
 <script type="text/javascript">
 	function addToCart(id) {
-		$.post('code-cart.php', {
-			'id': id, 
-			'action': 'add'
+		$.post('../cart/api-product.php', {
+			'action': 'add',
+			'id': $item['id'],
+			'num': 1
 		}, function(data) {
 			location.reload()
 		})
 	}
 </script>
-
-
 <!-- body END -->
 <?php
 include_once('../layout/footer.php');
