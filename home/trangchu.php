@@ -3,11 +3,11 @@
 	$title = "Nail | Home";
 	include_once('../layout/header.php');
 	
- 	$user = validateToken();
-if($user == null) {
- header('Location: ../user/login.php');
- die();
- }
+//  	$user = validateToken();
+// if($user == null) {
+//  header('Location: ../user/login.php');
+//  die();
+//  }
 ?>
 
 	<link rel="stylesheet" type="text/css" href="home.css">
