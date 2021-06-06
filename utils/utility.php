@@ -27,6 +27,37 @@ function getGet($key) {
 function getMD5Security($pwd) {
 	return md5(md5($pwd).MD5_PRIVATE_KEY);
 }
+//đoạn này ???
+// function validateToken() {
+// 	if(isset($_SESSION['user'])) {
+// 		// var_dump($_SESSION);
+// 		// echo 'get user from session<br/>';
+// 		return $_SESSION['user'];//memcache
+// 	}
+
+	// $token = '';
+	// if(isset($_COOKIE['token'])) {
+	// 	$token = $_COOKIE['token'];
+		
+	// 	$sql = "select * from user where token = '$token'";
+	// 	$result = executeResult($sql, true);
+
+	// 	$_SESSION['user'] = $result;
+
+
+// function validateToken() {
+// 	$token = '';
+// 	if(isset($_COOKIE['token'])) {
+// 		$token = $_COOKIE['token'];
+
+// 		$sql = "select * from users where token = '$token'";
+// 		$result = executeResult($sql, true);
+
+// 		return $result;
+// 	}
+
+// 	return false;
+// }
 
 function validateToken() {
 	if(isset($_SESSION['user'])) {
@@ -44,20 +75,13 @@ function validateToken() {
 
 		$_SESSION['user'] = $result;
 
+		return $result;
+	}
 
-// function validateToken() {
-// 	$token = '';
-// 	if(isset($_COOKIE['token'])) {
-// 		$token = $_COOKIE['token'];
-
-// 		$sql = "select * from users where token = '$token'";
-// 		$result = executeResult($sql, true);
-
-// 		return $result;
-// 	}
-
-// 	return false;
+	return false;
 }
+
+
 
 function moveFileToPhotos($key) {
 	// var_dump($_FILES);
