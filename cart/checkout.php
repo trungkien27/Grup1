@@ -26,7 +26,7 @@ require_once('checkout-form.php');
 ?>
 <!-- body -->
 <form method="post">
-	<div class="container" style="margin-top:17%;">
+	<div class="container" style="margin-top:7%;">
 		<div class="row">
 			<div class="col-md-5">
 				<h3>Thông tin giao hàng </h3>

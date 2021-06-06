@@ -67,7 +67,7 @@ if (isset($_COOKIE['cart']))
 
 <script type="text/javascript">
 	function addToCart(id) {
-		if ($('#soluong').val() < 0) {
+		if ($('#soluong').val() < 0 || $('#soluong').val() % 1 != 0) {
 			alert('Vui lòng nhập số lượng > 0');
 			return false;
 		}

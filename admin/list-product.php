@@ -7,7 +7,21 @@ require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
 require_once('../cart/api-product.php');
 
-$productList = executeResult('select * from product');
+
+
+if ($id = getGet('id')) {
+	$productList = executeResult('select * from product where category_id = '.$id);	
+} else {
+	$productList = executeResult('select * from product');
+} 
+
+if ($productList == null) {
+	header('Location: ../admin/list-product.php');
+	die();
+}
+
+		
+
 ?>
 <!-- body START -->
 <div class="container">

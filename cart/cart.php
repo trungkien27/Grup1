@@ -30,12 +30,12 @@ include_once('../layout/header.php');
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th>No</th>
-						<th>Thumbnail</th>
-						<th>Title</th>
-						<th>Num</th>
-						<th>Price</th>
-						<th>Total</th>
+						<th>STT </th>
+						<th>Hình ảnh </th>
+						<th>Tên sản phẩm </th>
+						<th>Số lượng </th>
+						<th>Giá </th>
+						<th>Tổng cộng </th>
 						<th></th>
 					</tr>
 				</thead>
@@ -55,11 +55,11 @@ include_once('../layout/header.php');
 		echo '
 			<tr>
 				<td>'.(++$count).'</td>
-				<td><img src="'.$item['thumbnail'].'" style="height: 100px"/></td>
+				<td><img src="'.$item['thumbnail'].'" style="height: 120px"/></td>
 				<td>'.$item['title'].'</td>
-				<td>'.$num.'</td>
-				<td>'.number_format($item['price'], 0, ',', '.').'</td>
-				<td>'.number_format($num*$item['price'], 0, ',', '.').'</td>
+				<td style="text-align:center;"><input type="button" onclick="tru()" value = "-">  '.$num.'  <button onclick="cong()"> + </button></td>
+				<td style="text-align:center;">'.number_format($item['price'], 0, ',', '.').'</td>
+				<td style="text-align:center;">'.number_format($num*$item['price'], 0, ',', '.').'</td>
 				<td><button class="btn btn-danger" onclick="deleteCart('.$item['id'].')"><i class="fa fa-times" aria-hidden="true"></i></button></td>
 			</tr>';
 	}
@@ -77,7 +77,23 @@ include_once('../layout/header.php');
 	</div>
 </div>
 <script type="text/javascript">
+	// function cong()	{
+	// 	var number = document.getElementById('$num').value;
+	// 	number = number + 1;
+	// 	var_dump(number);
+	// 	die();
+	// }
+	// function tru()	{
+	// 	var number = document.getElementById('$num').value;
+	// 	number = number - 1;
+	// 	var_dump('$num');
+	// 	die();
+	// }
+
 	function deleteCart(id) {
+		option = confirm('Bạn chắc chắn muốn xóa sản phẩm này ??')
+		if (!option) return
+
 		$.post('api-product.php', {
 			'action': 'delete',
 			'id': id
