@@ -1,4 +1,11 @@
+<?php
+	require_once('../db/dbhelper.php');
+	require_once('../utils/utility.php');
+	$users = validateToken();
+	// $sql = "select feedback.*, users.fullname from feedback, users where feedback.id_user = users.id and feedback.id_user = ".$users['id'];
+	// $dataList = executeResult($sql);
 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,6 +44,8 @@
 		    color: #f12020;
 		    background-color: rgba(255,255,255,.5);
 		}
+		.dropdown:hover .dropdown-menu {display: block;}
+
 		header{
 		  position: fixed;
 		  top: 0;
@@ -62,12 +71,10 @@
       				<a  class="nav-link" href="../home/trangchu.php">Trang Chủ</a>	
       			</li>
       			 <li class="nav-item active">
-      				<a type="button" onclick="changePageTitle()" class="nav-link" href="../home/about.php">Giới Thiệu</a>	
+      				<a class="nav-link" href="../home/about.php">Giới Thiệu</a>	
       			</li>	     	
 	    		<li class="nav-item active dropdown">
-	      			<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-	        		Dịch Vụ
-	      			</a>
+	      			<a class="nav-link dropdown-toggle" href="../home/dichvu.php" id="navbardrop" data-toggle="dropdown">Dịch Vụ</a>
 	      	<div class="dropdown-menu" style="border: none; font-weight: bold;">
 		        <a style="font-weight: bold;" class="dropdown-item" href="#">Cải tiến móng</a>
 		        <a style="font-weight: bold;" class="dropdown-item" href="#">Cắt sửa móng tay & móng chân</a>
@@ -85,12 +92,20 @@
 	      <a class="nav-link" href="../home/contact-us.php">Liên Hệ</a>
 	    </li>
 	    <li class="nav-item active">
-	      <a class="nav-link" href="#">Join Our Team</a>
+	      <a class="nav-link" href="../home/jointeam.php">Join Our Team</a>
 	    </li>
+	   
 
-	    <li class="nav-item active">
+<?php	if(validateToken() != null) {?>
+			<li class="nav-item active">
+		        <a class="nav-link" href="../user/logout.php"><i class="bi bi-door-open-fill"></i>Đăng Xuất</a>
+		    </li>
+<?php	}else{ ?>
+		<li class="nav-item active">
 	      <a class="nav-link" href="../user/login.php"><i class="bi bi-door-open-fill"></i>Đăng Nhập</a>
 	    </li>
+<?php	} ?>
+  
 	  </ul>
 	  
 	  <?php
@@ -118,6 +133,4 @@
         }
 </script>
 	
-
-
 

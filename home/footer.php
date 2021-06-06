@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="footer.css">
-	<footer>
+	<footer >
 		<div class="main-content">
 			<div class="left box">
 				<h2>About Us</h2>
