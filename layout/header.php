@@ -1,27 +1,24 @@
 <?php
 require_once '../db/dbhelper.php';
-	$categoryList = executeResult("select * from category");
+	// $categoryList = executeResult("select * from category");
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-	<!-- Popper JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-	<!-- Font Awesome 4.7 CDN -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="robots" content="all,follow">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Herr+Von+Muellerhoff" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
 	
 <style>
@@ -33,13 +30,13 @@ require_once '../db/dbhelper.php';
 }
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #fff;
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #000;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -47,7 +44,7 @@ require_once '../db/dbhelper.php';
 }
 
 .active {
-  background-color: #04AA6D;
+  background-color: #fff;
   color: white;
 }
 
@@ -64,7 +61,7 @@ require_once '../db/dbhelper.php';
   font-size: 17px;    
   border: none;
   outline: none;
-  color: white;
+  color: #000;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -82,7 +79,7 @@ require_once '../db/dbhelper.php';
 
 .dropdown-content a {
   float: none;
-  color: black;
+  color: #000;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -90,20 +87,18 @@ require_once '../db/dbhelper.php';
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #555;
-  color: white;
+  color: #f12020;
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
-  color: black;
+  color: #f12020;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1446px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
   }
@@ -113,7 +108,7 @@ require_once '../db/dbhelper.php';
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1446px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -133,50 +128,68 @@ require_once '../db/dbhelper.php';
     text-align: left;
   }
 }
+.logo {
+  width: 325px;
+  height: 49px;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  z-index: 100000;
+}
 </style>
 </head>
 <body>
 
-<div class="topnav navbar" id="myTopnav">
-	<a class="navbar-brand" href="../home/trangchu.php">
-		<img src="https://static.wixstatic.com/media/4e382d_0d579ec3ec6241af9e1380ed79c56b7b~mv2.png/v1/fill/w_406,h_46,al_c,q_85,usm_0.66_1.00_0.01/Asset%202_3x.webp" alt="logo" style="width:100%;">
-	</a>
+<header>
+  <div class="topnav navbar" id="myTopnav">
+  <a class="navbar-brand" href="../home/trangchu.php">
+    <img class="logo" src="https://static.wixstatic.com/media/4e382d_0d579ec3ec6241af9e1380ed79c56b7b~mv2.png/v1/fill/w_406,h_46,al_c,q_85,usm_0.66_1.00_0.01/Asset%202_3x.webp" alt="logo" style="width:325px;">
+  </a>
     <a href="../home/trangchu.php">trang chủ</a>
-	<a href="../home/about.php">giới thiệu</a>
-	<div class="dropdown">
-		<button class="dropbtn" href="../admin/list-product.php">sản phẩm 
-			<i class="fa fa-caret-down"></i>
-		</button>
-	    <div class="dropdown-content">
-	    	<?php
-		        foreach ($categoryList as $item) {
-		          echo '<a href="../admin/list-product.php?id='.$item['id'].'">'.$item['title'].'</a>';
-		        }
-	        ?>
-		</div>
-	</div>      
-	<a href="../page/gallery.php">thư viện ảnh</a>
-	<a href="../page/tips.php">tips chia sẻ</a>
-	<a href="../home/contact-us.php">liên hệ</a>
-	<a href="../user/login.php"><i class="fa fa-user" aria-hidden="true"></i> đăng nhập</a>
-	<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  <a href="../home/about.php">giới thiệu</a>
+  <div class="dropdown">
+    <button class="dropbtn" href="../admin/list-product.php">sản phẩm 
+      <i class="fa fa-caret-down"></i>
+    </button>
+      <div class="dropdown-content">
+        <?php
+            foreach ($categoryList as $item) {
+              echo '<a href="../admin/list-product.php?id='.$item['id'].'">'.$item['title'].'</a>';
+            }
+          ?>
+    </div>
+  </div>      
+  <a href="../page/gallery.php">thư viện ảnh</a>
+  <a href="../page/tips.php">tips chia sẻ</a>
+  <a href="../home/contact-us.php">liên hệ</a>
+  <a href="../user/login.php"><i class="fa fa-user" aria-hidden="true"></i> đăng nhập</a>
+  <a href="javascript:void(0);" style="font-size:30px;" class="icon" onclick="myFunction()">&#9776;</a>
 <?php
-	$cart = [];
-	if(isset($_COOKIE['cart'])) {
-		$json = $_COOKIE['cart'];
-		$cart = json_decode($json, true);
-	}
-	$count = 0;
-		foreach ($cart as $item) {
-		$count += $item['num'];
-	}
+  $cart = [];
+  if(isset($_COOKIE['cart'])) {
+    $json = $_COOKIE['cart'];
+    $cart = json_decode($json, true);
+  }
+  $count = 0;
+    foreach ($cart as $item) {
+    $count += $item['num'];
+  }
 ?>
-	<a href="../cart/cart.php">
-		<button type="button" class="btn btn-outline-danger btn-sm" style="font-size: 23px;border: none;margin-left:50px;">
-			<i class="fa fa-shopping-cart" aria-hidden="true"></i> Giỏ hàng <span style="font-weight: bold; color: black;"><?=$count?></span>
-		</button>
-	</a>
+
+  <a href="../cart/cart.php">
+    <button type="button" class="btn btn-outline-danger btn-sm" style="font-size: 23px;border: none;margin-left:50px;">
+      <i class="fa fa-shopping-cart" aria-hidden="true"></i> Giỏ hàng <span style="font-weight: bold; color: black;"><?=$count?></span>
+    </button>
+  </a>
 </div>
+</header>
 
 <script>
 function myFunction() {
