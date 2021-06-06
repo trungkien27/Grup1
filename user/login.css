@@ -1,6 +1,9 @@
 
 .dangnhap{
 	background-image: url(baner.jpg)no-repeat;
+}
+body{
+	
 	background-size: cover;
 	opacity: 0.99;
 	background-attachment: fixed;

@@ -9,7 +9,7 @@ function getPost($key) {
 	$value = '';
 	if(isset($_POST[$key])) {
 		$value = $_POST[$key];
-	}
+	}		
 
 	return removeSpecialCharacter($value);
 }
@@ -44,10 +44,19 @@ function validateToken() {
 
 		$_SESSION['user'] = $result;
 
-		return $result;
-	}
 
-	return false;
+// function validateToken() {
+// 	$token = '';
+// 	if(isset($_COOKIE['token'])) {
+// 		$token = $_COOKIE['token'];
+
+// 		$sql = "select * from users where token = '$token'";
+// 		$result = executeResult($sql, true);
+
+// 		return $result;
+// 	}
+
+// 	return false;
 }
 
 function moveFileToPhotos($key) {
@@ -83,4 +92,5 @@ function moveFileToPhotos($key) {
 	}
 	return $path_filename_ext;
 }
+
 

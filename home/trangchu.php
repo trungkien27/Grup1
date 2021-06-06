@@ -3,7 +3,12 @@
 	$title = "Nail | Home";
 	include_once('../layout/header.php');
 	
-?> 
+ 	$user = validateToken();
+if($user == null) {
+ header('Location: ../user/login.php');
+ die();
+ }
+?>
 
 	<link rel="stylesheet" type="text/css" href="home.css">
 	<section class="hero1" style="font-size: 10px;">
@@ -54,8 +59,12 @@
 	</div>		
 		<div class="bgimg-3">
 			<div class="caption">
+
 					<span class="border">
 						<div class="container" style="text-align: justify;">
+
+					<span class="border" >
+						<div class="container" style="text-align: center;">
 							<img src="mask.png" >
 							<h1>Phản hồi của chúng tôi đối  với COVID19</h1>
 						</div>
