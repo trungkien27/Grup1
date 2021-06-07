@@ -3,9 +3,9 @@ include_once('../layout/header.php');
 
 ?>
 
-<link rel="stylesheet" type="text/css" href="style.css">
+<!-- <link rel="stylesheet" type="text/css" href="../layout/style.css"> -->
 <!-- body START -->
-		<h1><span>5 mẫu đơn giản tự làm ở nhà</span></h1>
+		<h1 style="margin-top:10%;"><span>5 mẫu đơn giản tự làm ở nhà</span></h1>
 			<div class="article">
 				<h2>Vẽ móng tay màu trắng tối thiểu</h2>
 					<p>

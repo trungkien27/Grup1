@@ -1,7 +1,7 @@
 <?php
 include_once('../layout/header.php');
 ?>
-	<div class="container">
+	<div class="container" style="margin-top:10%;">
 		<h1><span class="title">Tips</span></h1>
 		<div class="tip">
 			<ul>
