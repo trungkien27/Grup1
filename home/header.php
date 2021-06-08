@@ -44,8 +44,26 @@
 		    color: #f12020;
 		    background-color: rgba(255,255,255,.5);
 		}
-		.dropdown:hover .dropdown-menu {display: block;}
-
+		.dropdown:hover .dropdown-menu {
+			display: block;
+		}
+		/*@media screen and (max-width: 900px) {
+  		.topnav a:not(:first-child), .dropdown .dropbtn {
+    		display: none;
+  		}
+  		.topnav a.icon {
+    		float: right;
+    		display: block;
+ 			}
+		}
+		@media screen and (max-width: 900px) {
+  		.topnav.responsive {position: relative;}
+  		.topnav.responsive .icon {
+    		position: absolute;
+    		right: 0;
+    		top: 0;
+		}
+*/
 		header{
 		  position: fixed;
 		  top: 0;
@@ -63,7 +81,7 @@
 	<header>
 		<nav class="navbar navbar-expand-sm  navbar-light " style="background-color: #ffffff;">
 		<a class="navbar-brand" href="../home/trangchu.php">
-    		<img src="https://static.wixstatic.com/media/4e382d_0d579ec3ec6241af9e1380ed79c56b7b~mv2.png/v1/fill/w_406,h_46,al_c,q_85,usm_0.66_1.00_0.01/Asset%202_3x.webp" alt="logo" style="width:100%;">
+    		<img  src="https://static.wixstatic.com/media/4e382d_0d579ec3ec6241af9e1380ed79c56b7b~mv2.png/v1/fill/w_406,h_46,al_c,q_85,usm_0.66_1.00_0.01/Asset%202_3x.webp" alt="logo" style="width:100%;">
  		</a>
 		 <div class="container">
 		 	<ul class="navbar-nav" style="color: #000000; font-weight: bold;">
@@ -76,17 +94,21 @@
 	    		<li class="nav-item active dropdown">
 	      			<a class="nav-link dropdown-toggle" href="../home/dichvu.php" id="navbardrop" data-toggle="dropdown">Dịch Vụ</a>
 	      	<div class="dropdown-menu" style="border: none; font-weight: bold;">
-		        <a style="font-weight: bold;" class="dropdown-item" href="#">Cải tiến móng</a>
+		        <a style="font-weight: bold;" class="dropdown-item" href="../home/dichvu.php">Cải tiến móng</a>
 		        <a style="font-weight: bold;" class="dropdown-item" href="#">Cắt sửa móng tay & móng chân</a>
 		        <a style="font-weight: bold;" class="dropdown-item" href="#">Waxing</a>
 		        <a style="font-weight: bold;" class="dropdown-item" href="#">Thêm Ons</a>
 		     </div>
 	    </li>
-	    <li class="nav-item active">
+	    <li class="nav-item active">	    	
 	      <a class="nav-link" href="#">Cửa Hàng</a>
 	    </li>
-	    <li class="nav-item active">
-	      <a class="nav-link" href="#">Hình Ảnh Chỉa Sẻ</a>
+	    <li class="nav-item active dropdown">
+	      <a class="nav-link dropdown-toggle" href="#">Hình Ảnh Chỉa Sẻ</a>
+	         <div class="dropdown-menu" style="border: none; font-weight: bold;">
+		        <a style="font-weight: bold;" class="dropdown-item" href="../page/gallery.php">Thư Viện Ảnh</a>
+		        <a style="font-weight: bold;" class="dropdown-item" href="../page/tips.php">Tips Chỉa Sẻ</a>
+		     </div>
 	    </li>
 	   <li class="nav-item active">
 	      <a class="nav-link" href="../home/contact-us.php">Liên Hệ</a>

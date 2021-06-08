@@ -57,14 +57,6 @@ html{
 
 }
 
-.bgimg-1,  .bgimg-3 {
-  position: relative;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-}
 
 .bgimg-1 {
   background-image: url("baner.jpg");
