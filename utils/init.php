@@ -10,6 +10,7 @@ if(!empty($_POST)) {
 		fullname varchar(50),
 		email varchar(50),
 		password varchar(32),
+		token varchar(100),
 		created_at datetime,
 		updated_at datetime
 	)";

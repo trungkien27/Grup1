@@ -1,5 +1,6 @@
 <?php
 require_once '../db/dbhelper.php';
+require_once '../utils/utility.php';
 	// $categoryList = executeResult("select * from category");
 ?>
 
@@ -19,15 +20,15 @@ require_once '../db/dbhelper.php';
   
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../layout/style.css">
 
-	
 <style>
 
 .navbar {
-
 	/*position: fixed;*/
  	top: 20;
 }
+
 .topnav {
   overflow: hidden;
   background-color: #fff;
@@ -40,7 +41,10 @@ require_once '../db/dbhelper.php';
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 18px;
+  font-family: Cambria;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .active {
@@ -55,6 +59,8 @@ require_once '../db/dbhelper.php';
 .dropdown {
   float: left;
   overflow: hidden;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown .dropbtn {
@@ -128,11 +134,13 @@ require_once '../db/dbhelper.php';
     text-align: left;
   }
 }
+
 .logo {
   width: 325px;
   height: 49px;
 }
-header {
+
+#myTopnav {
   position: fixed;
   top: 0;
   left: 0;
@@ -143,6 +151,7 @@ header {
   transition: 0.6s;
   z-index: 100000;
 }
+
 </style>
 </head>
 <body>
@@ -153,24 +162,40 @@ header {
     <img class="logo" src="https://static.wixstatic.com/media/4e382d_0d579ec3ec6241af9e1380ed79c56b7b~mv2.png/v1/fill/w_406,h_46,al_c,q_85,usm_0.66_1.00_0.01/Asset%202_3x.webp" alt="logo" style="width:325px;">
   </a>
     <a href="../home/trangchu.php">trang chủ</a>
-  <a href="../home/about.php">giới thiệu</a>
-  <div class="dropdown">
+    <a href="../home/about.php">giới thiệu</a>
+    <a href="../admin/list-product.php">sản phẩm</a>
+<!--   <div class="dropdown">
     <button class="dropbtn" href="../admin/list-product.php">sản phẩm 
       <i class="fa fa-caret-down"></i>
     </button>
       <div class="dropdown-content">
-        <?php
+       
             foreach ($categoryList as $item) {
               echo '<a href="../admin/list-product.php?id='.$item['id'].'">'.$item['title'].'</a>';
-            }
-          ?>
+            
     </div>
-  </div>      
-  <a href="../page/gallery.php">thư viện ảnh</a>
-  <a href="../page/tips.php">tips chia sẻ</a>
+  </div>       -->
+  <!-- <div class="dropdown"> -->
+    <!-- <a class="dropbtn">chia sẻ<a> -->
+      <!-- <div class="dropdown-content"> -->
+        <a href="../page/gallery.php">thư viện ảnh</a>
+        <a href="../page/tips.php">tips </a>
+      <!-- </div> -->
+  <!-- </div> -->
   <a href="../home/contact-us.php">liên hệ</a>
-  <a href="../user/login.php"><i class="fa fa-user" aria-hidden="true"></i> đăng nhập</a>
+
+<?php if(validateToken() != null) {
+  echo ' <li class="nav-item active">
+    <a class="nav-link" href="../user/logout.php"><i class="bi bi-door-open-fill"></i>Đăng Xuất</a>
+    </li>';
+  } else { 
+  echo '<li class="nav-item active">
+    <a class="nav-link" href="../user/login.php"><i class="bi bi-door-open-fill"></i>Đăng Nhập</a>
+    </li>';
+  } 
+?>
   <a href="javascript:void(0);" style="font-size:30px;" class="icon" onclick="myFunction()">&#9776;</a>
+
 <?php
   $cart = [];
   if(isset($_COOKIE['cart'])) {

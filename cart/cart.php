@@ -8,6 +8,7 @@ include_once('../layout/header.php');
 		$json = $_COOKIE['cart'];
 		$cart = json_decode($json, true);
 	}
+
 	$idList = [];
 	foreach ($cart as $item) {
 		$idList[] = $item['id'];
@@ -57,7 +58,7 @@ include_once('../layout/header.php');
 				<td>'.(++$count).'</td>
 				<td><img src="'.$item['thumbnail'].'" style="height: 120px"/></td>
 				<td>'.$item['title'].'</td>
-				<td style="text-align:center;"><input type="button" onclick="tru()" value = "-">  '.$num.'  <button onclick="cong()"> + </button></td>
+				<td style="text-align:center;">'.$num.'</td>
 				<td style="text-align:center;">'.number_format($item['price'], 0, ',', '.').'</td>
 				<td style="text-align:center;">'.number_format($num*$item['price'], 0, ',', '.').'</td>
 				<td><button class="btn btn-danger" onclick="deleteCart('.$item['id'].')"><i class="fa fa-times" aria-hidden="true"></i></button></td>

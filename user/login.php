@@ -8,9 +8,6 @@ if(validateToken() != null) {
 	die();
 }
 
-
-
-
 ?>
 <!DOCTYPE html>
 <html>

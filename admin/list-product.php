@@ -21,10 +21,9 @@ if ($productList == null) {
 }
 
 		
-
 ?>
 <!-- body START -->
-<div class="container">
+<div class="container" style="margin-top:10%;">
 	<div class="panel panel-primary" style="margin-top:7%;">
 		<div class="panel-heading">
 			Tìm sản phẩm
@@ -35,6 +34,7 @@ if ($productList == null) {
 	</div>
 
 	<div class="row">
+		
 <?php
 if (!empty($_GET)) {
 	if (isset($_GET['search'])) {
@@ -50,7 +50,7 @@ foreach ($productList as $item) {
 			<a href="../cart/detail.php?id='.$item['id'].'"><img src="'.$item['thumbnail'].'" style="width: 100%"></a>
 			<a href="../cart/detail.php?id='.$item['id'].'"><p style="font-size: 16px;">'.$item['title'].'</p></a>
 			<p style="font-size: 16px; color: red">'.number_format($item['price'], 0, '', '.').' VND</p>
-			<button class="btn btn-success" onclick="addToCart(<?=$id?>)">Thêm vào giỏ</button>
+			<button class="btn btn-success" onclick="addToCart('.$item['id'].')">Thêm vào giỏ</button>
 		</div>';
 }
 ?>
@@ -59,10 +59,13 @@ foreach ($productList as $item) {
 </div>
 
 <script type="text/javascript">
+
+	
 	function addToCart(id) {
+        alert('Thêm vào giỏ thành công! Hãy kiểm tra giỏ hàng.')
 		$.post('../cart/api-product.php', {
 			'action': 'add',
-			'id': $item['id'],
+			'id':id,
 			'num': 1
 		}, function(data) {
 			location.reload()

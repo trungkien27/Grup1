@@ -1,9 +1,24 @@
 <?php
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
-include_once('../layout/header.php');
+// include_once('../layout/header.php');
 
 require_once('checkout-form.php');
+
+if (validateToken() == null) {
+	header('Location: ../user/login.php');
+	die();
+}
+
+//dùng token tìm thông tin user_id trong bảng user 
+$token = '';
+	if(isset($_COOKIE['token'])) {
+		$token = $_COOKIE['token'];
+		
+		$find_id = "select * from user where token = '$token'";
+		$user = executeResult($find_id, true);
+}
+//
 
 	$cart = [];
 	if(isset($_COOKIE['cart'])) {
@@ -30,6 +45,10 @@ require_once('checkout-form.php');
 		<div class="row">
 			<div class="col-md-5">
 				<h3>Thông tin giao hàng </h3>
+				<div class="form-group" style="display:none;">
+				  <label for="userid">userid:</label>
+				  <input type="number" class="form-control" id="userID" name="userID" value="<?=$user['id']?>">
+				</div>
 				<div class="form-group">
 				  <label for="usr">Tên người nhận:</label>
 				  <input required="true" type="text" class="form-control" id="usr" name="fullname">
