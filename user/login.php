@@ -9,11 +9,6 @@ if(validateToken() != null) {
 }
 
 
-if(validateToken() != null) {
-	header('Location: ../home/trangchu.php');
-	die();
-}
-
 
 
 ?>

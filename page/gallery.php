@@ -1,8 +1,17 @@
 <?php 
+
 include_once('../layout/header.php');
 ?>
 
 	<div class="container" style="margin-top:10%;">
+<?php
+$title ="Nail | Gallery";
+include_once('../home/header.php');
+?>
+ <link rel="stylesheet" type="text/css" href="style.css">
+ <body style="background-color: #f8f8f8;">
+	<div class="container" style="margin-top:10%; background-color: #f8f8f8;">
+
 		<h1><span class="title">gallery</span></h1>
 		<div class="gallery">
 			<ul>
@@ -89,6 +98,12 @@ include_once('../layout/header.php');
 			</ul>
 		</div>
 	</div>
+
 <?php 
 include_once('../layout/footer.php');
+?>
+ 	
+ </body>	
+<?php 
+include_once('../home/footer.php');
 ?>
