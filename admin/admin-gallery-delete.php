@@ -1,27 +1,16 @@
 <?php
 require_once '../layout/admin-header.php';
 ?>
-    <head>
-        <style>
-            .box-content{
-                margin: 0 auto;
-                width: 800px;
-                border: 1px solid #ccc;
-                text-align: center;
-                padding: 20px;
-
-        </style>
-    </head>
     <body>
+        <div class="container" style="margin-top: 10px;">
         <?php
         if (isset($_GET['url']) && !empty($_GET['url'])) {
             $url = $_GET['url'];
             unlink($url);
             ?>
-            <div id="success-notify" class="box-content">
-                <h1>Xóa ảnh thành công</h1>
-                <a href="admin-gallery.php">Danh sách ảnh</a>
-            </div>
+                <h2 class="text-center">Xóa ảnh thành công</h2>
+                <a href="admin-gallery.php" style="text-align: center;">Danh sách ảnh</a>
+         </div>
         <?php } ?>
     </body>
 </html>
