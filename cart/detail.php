@@ -12,10 +12,6 @@ if ($product == null) {
 	die();
 }
 
-$cart = '[]';
-if (isset($_COOKIE['cart'])) 
-	$cart = $_COOKIE['cart'];
-
 ?>
 
 <div class="container">

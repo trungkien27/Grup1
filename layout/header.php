@@ -1,13 +1,17 @@
 <?php
 require_once '../db/dbhelper.php';
 require_once '../utils/utility.php';
-	// $categoryList = executeResult("select * from category");
+  // $users = validateToken();
+  // $sql = "select  user.fullname from user ";
+  // $dataList = executeResult($sql);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><?php echo isset($title) ? $title : "Default Title"; ?></title>
+  <meta charset="utf-8">    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Herr+Von+Muellerhoff" />
@@ -182,9 +186,11 @@ require_once '../utils/utility.php';
         <a href="../page/tips.php">tips </a>
       <!-- </div> -->
   <!-- </div> -->
+  
   <a href="../home/contact-us.php">liên hệ</a>
 
-<?php if(validateToken() != null) {
+<?php
+ if(validateToken() != null) {
   echo ' <li class="nav-item active">
     <a class="nav-link" href="../user/logout.php"><i class="bi bi-door-open-fill"></i>Đăng Xuất</a>
     </li>';
@@ -194,6 +200,7 @@ require_once '../utils/utility.php';
     </li>';
   } 
 ?>
+
   <a href="javascript:void(0);" style="font-size:30px;" class="icon" onclick="myFunction()">&#9776;</a>
 
 <?php
@@ -206,6 +213,7 @@ require_once '../utils/utility.php';
     foreach ($cart as $item) {
     $count += $item['num'];
   }
+
 ?>
 
   <a href="../cart/cart.php">
@@ -225,4 +233,8 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+ function changePageTitle() {
+            newPageTitle = 'The title has changed!';
+            document.title = newPageTitle;
+        }
 </script>

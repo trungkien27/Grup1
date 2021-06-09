@@ -11,10 +11,11 @@ include_once('../layout/header.php');
 
 	$idList = [];
 	foreach ($cart as $item) {
+		//push id của các item trong cart vào idList
 		$idList[] = $item['id'];
 	}
 	if(count($idList) > 0) {
-		//đưa idList về dạng mảng 
+		//đưa idList mảng về dạng chuỗi 
 		$idList = implode(',', $idList);
 		//[2, 5, 6] => 2,5,6
 

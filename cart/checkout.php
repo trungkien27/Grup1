@@ -1,7 +1,7 @@
 <?php
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
-// include_once('../layout/header.php');
+include_once('../layout/header.php');
 
 require_once('checkout-form.php');
 

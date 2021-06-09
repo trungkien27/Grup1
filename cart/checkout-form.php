@@ -8,10 +8,10 @@ if(!empty($_POST))	{
 	}
 
 	// || count($cart == 0) ->đoạn này đang lỗi ko chạy.
-	if ($cart == null) {
-		header('Location: ../admin/list-product.php');
-		die();
-	}
+	// if ($cart == null) {
+	// 	header('Location: ../admin/list-product.php');
+	// 	die();
+	// }
 
 	$fullname = getPost('fullname');
 	$address = getPost('address');
