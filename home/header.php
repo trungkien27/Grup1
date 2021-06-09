@@ -2,8 +2,8 @@
 	require_once('../db/dbhelper.php');
 	require_once('../utils/utility.php');
 	$users = validateToken();
-	// $sql = "select feedback.*, users.fullname from feedback, users where feedback.id_user = users.id and feedback.id_user = ".$users['id'];
-	// $dataList = executeResult($sql);
+	$sql = "select  users.fullname from users ";
+	$dataList = executeResult($sql);
 
 ?>
 <!DOCTYPE html>
@@ -93,7 +93,7 @@
       			</li>	     	
 	    		<li class="nav-item active dropdown">
 	      			<a class="nav-link dropdown-toggle" href="../home/dichvu.php" id="navbardrop" data-toggle="dropdown">Dịch Vụ</a>
-	      	<div class="dropdown-menu" style="border: none; font-weight: bold;">
+	      	<div class="dropdown-menu" style="border: none; font-weight: bold;line-height: 30px;">
 		        <a style="font-weight: bold;" class="dropdown-item" href="../home/dichvu.php">Cải tiến móng</a>
 		        <a style="font-weight: bold;" class="dropdown-item" href="#">Cắt sửa móng tay & móng chân</a>
 		        <a style="font-weight: bold;" class="dropdown-item" href="#">Waxing</a>
@@ -105,7 +105,7 @@
 	    </li>
 	    <li class="nav-item active dropdown">
 	      <a class="nav-link dropdown-toggle" href="#">Hình Ảnh Chỉa Sẻ</a>
-	         <div class="dropdown-menu" style="border: none; font-weight: bold;">
+	         <div class="dropdown-menu" style="border: none; font-weight: bold;line-height: 30px;">
 		        <a style="font-weight: bold;" class="dropdown-item" href="../page/gallery.php">Thư Viện Ảnh</a>
 		        <a style="font-weight: bold;" class="dropdown-item" href="../page/tips.php">Tips Chỉa Sẻ</a>
 		     </div>
@@ -119,8 +119,12 @@
 	   
 
 <?php	if(validateToken() != null) {?>
-			<li class="nav-item active">
-		        <a class="nav-link" href="../user/logout.php"><i class="bi bi-door-open-fill"></i>Đăng Xuất</a>
+			<li class="nav-item active dropdown">
+		        <a class="nav-link dropdown-toggle" href=""><?=$users['fullname']?></a>
+		     <div class="dropdown-menu" style="border: none; font-weight: bold;line-height: 30px;">
+		        <a style="font-weight: bold;" class="dropdown-item" href="">Thông Tin Tài Khoản</a>
+		        <a style="font-weight: bold;" class="dropdown-item" href="../user/logout.php">Đăng Xuất</a>
+		     </div>
 		    </li>
 <?php	}else{ ?>
 		<li class="nav-item active">
