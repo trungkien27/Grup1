@@ -71,10 +71,10 @@
 							<a href=""><button type="button" class="btn btn-primary"><i class="fa fa-newspaper-o" aria-hidden="true"></i>Bài viết</button></a>
 						</li>
 						<li>
-							<a href=""><button type="button" class="btn btn-primary" ><i class="fa fa-picture-o" aria-hidden="true"></i>Bộ sưu tập ảnh</button></a>
+							<a href="../admin/admin-gallery.php"><button type="button" class="btn btn-primary" ><i class="fa fa-picture-o" aria-hidden="true"></i>Bộ sưu tập ảnh</button></a>
 						</li>
 						<li>
-							<a href=""><button type="button" class="btn btn-primary"><i class="fa fa-rss" aria-hidden="true"></i>Phản hồi </button></a>
+							<a href="../admin/admin-feedback.php"><button type="button" class="btn btn-primary"><i class="fa fa-rss" aria-hidden="true"></i>Phản hồi </button></a>
 						</li>
 						<li>
 							<a href=""><button type="button" class="btn btn-primary"><i class="fa fa-user-circle-o" aria-hidden="true"></i>Quản lý tài khoản </button></a>

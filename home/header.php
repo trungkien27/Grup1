@@ -158,5 +158,3 @@
             document.title = newPageTitle;
         }
 </script>
-	
-
