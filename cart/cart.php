@@ -49,6 +49,10 @@ include_once('../layout/header.php');
 		foreach ($cart as $value) {
 			if($value['id'] == $item['id']) {
 				$num = $value['num'];
+				// if($num > 20) {
+					// $num = 20;
+					// $value['num'] = $num;
+				// }
 				break;
 			}
 		}
@@ -67,12 +71,12 @@ include_once('../layout/header.php');
 ?>
 				</tbody>
 			</table>
-			<p style="font-size: 30px; color: red">
-				Total: <?=number_format($total, 0, ',', '.')?>
+			<p style="font-size: 30px; color: red; float:right; margin-right: 10%;">
+				Tổng số tiền: <?=number_format($total, 0, ',', '.')?>
 			</p>
 
 			<a href="checkout.php">
-				<button class="btn btn-success" style="width: 100%; font-size: 32px;">Checkout</button>
+				<button class="btn btn-success" style="width: 100%; font-size: 32px;">Thanh toán</button>
 			</a>
 		</div>
 	</div>

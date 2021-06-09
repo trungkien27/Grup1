@@ -104,7 +104,7 @@ $token = '';
 					</tbody>
 				</table>
 				<p style="font-size: 30px; color: red">
-					Total: <?=number_format($total, 0, ',', '.')?>
+					Tổng số tiền:<?=number_format($total, 0, ',', '.')?>
 				</p>
 
 				<button class="btn btn-success" style="width: 100%; font-size: 32px;">Hoàn thành </button>
