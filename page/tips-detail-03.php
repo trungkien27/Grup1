@@ -9,7 +9,7 @@ include_once('../layout/header.php');
 		.h1 {
 			text-align: center;
 			font-weight: bold;
-			margin-top: 72px;
+			margin-top: 10%;
 		}
 		.s2 {
 			font-size: 1.953em;
@@ -82,5 +82,5 @@ include_once('../layout/header.php');
 	</div>
 
 <?php 
-include_once('../home/footer.php');
+include_once('../layout/footer.php');
 ?>
