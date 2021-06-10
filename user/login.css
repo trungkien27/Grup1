@@ -1,14 +1,23 @@
-*{
-	margin: 0px;
-	padding: 0px;
-	font-family: sans-serif;
+
+.dangnhap{
+	background-image: url(baner.jpg)no-repeat;
+}
+body{
+	
+	background-size: cover;
+	opacity: 0.99;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 .hero {
+	
 	height: 100%;
 	width: 100%;
 	background-position: center;
 	background-size: cover;
 	position: absolute;
+	
 }
 .form-box {
 	width: 380px;
