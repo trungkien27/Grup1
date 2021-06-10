@@ -1,14 +1,17 @@
-<?
+<?php	if(validateToken() != null) {?>
+			<li class="nav-item active dropdown">
+		        <a class="nav-link dropdown-toggle" href=""><?=$users['fullname']?></a>
+		     <div class="dropdown-menu" style="border: none; font-weight: bold;line-height: 30px;">
+		        <a style="font-weight: bold;" class="dropdown-item" href="">Thông Tin Tài Khoản</a>
+		        <a style="font-weight: bold;" class="dropdown-item" href="../user/logout.php">Đăng Xuất</a>
+		     </div>
+		    </li>
+<?php	}else{ ?>
+		<li class="nav-item active">
+	      <a class="nav-link" href="../user/login.php"><i class="bi bi-door-open-fill"></i>Đăng Nhập</a>
+	    </li>
+<?php	} ?>
+  
 
-$user = validateToken();
-?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title></title>
-</head>
-<body>
-	<h1 style="text-align: center;">Hello <font color="red"><?=$user['fullname']?></font>(<a href="../user/logout.php">Log out</a>)</h1>
-</body>
-</html>
+
+  

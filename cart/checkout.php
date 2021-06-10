@@ -1,7 +1,7 @@
 <?php
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
-// include_once('../layout/header.php');
+include_once('../layout/header.php');
 
 require_once('checkout-form.php');
 
@@ -104,7 +104,7 @@ $token = '';
 					</tbody>
 				</table>
 				<p style="font-size: 30px; color: red">
-					Total: <?=number_format($total, 0, ',', '.')?>
+					Tổng số tiền:<?=number_format($total, 0, ',', '.')?>
 				</p>
 
 				<button class="btn btn-success" style="width: 100%; font-size: 32px;">Hoàn thành </button>

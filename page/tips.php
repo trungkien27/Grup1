@@ -1,14 +1,9 @@
 <?php
+$title = "Nail | Tips";
 include_once('../layout/header.php');
 ?>
-	<div class="container" style="margin-top:10%;">
-
-$title = "Nail | Tips";
-include_once('../home/header.php');
-?>
-	?>
  <link rel="stylesheet" type="text/css" href="style.css">
-	<div class="container" style="margin-top: 35px;">
+	<div class="container" style="margin-top: 10%;">
 		<h1><span class="title">Tips</span></h1>
 		<div class="tip">
 			<ul>
@@ -37,7 +32,7 @@ include_once('../home/header.php');
 					<div class="content-right">
 						<h3><span>Dành cho những cô nàng tinh nghịch</span></h3>
 						<p>
-							Bạn có thể tự làm ngay tại nhà chỉ trong vài bước. Hãy bắt đầu với một số thiết kế nghệ thuật móng tay dễ dàng. Chỉ với một ít dụng cụ và 5 bước sau đây.
+							Lo ngại trong mùa dịch? Bạn có thể tự làm ngay tại nhà chỉ trong vài bước. Hãy bắt đầu với một số thiết kế nghệ thuật móng tay dễ dàng. Chỉ với một ít dụng cụ và 5 bước sau đây.
 						</p>
 						<a href="../page/tips-detail-03.php" class="read">xem thêm</a>
 					</div>
@@ -47,7 +42,7 @@ include_once('../home/header.php');
 					<div class="content-right">
 						<h3><span>Những style cho mùa đông không nên bỏ lỡ</span></h3>
 						<p>
-							Những ngày Halloween và Xmas đang đến gần, và bạn có thể xuất hiện với những kiểu vẽ độc đáo. Các quý cô sẽ gây ấn tượng với bộ móng dài lộng lẫy và được trang trí bằng những thiết kế nổi bật trong mùa lễ hội này.
+							Những ngày Halloween và Xmas đang đến gần, cùng với những kiểu vẽ độc đáo. Các quý cô sẽ gây ấn tượng với bộ móng dài lộng lẫy và được trang trí bằng những thiết kế nổi bật trong mùa lễ hội này.
 						</p>
 						<a href="../page/tips-detail-04.php" class="read">xem thêm</a>
 					</div>
@@ -57,5 +52,5 @@ include_once('../home/header.php');
 	</div>
 
 <?php
-include_once('../home/footer.php');
+include_once('../layout/footer.php');
 ?>

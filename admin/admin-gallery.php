@@ -6,6 +6,7 @@ require_once '../layout/admin-header.php';
     #gallery{
         display: table;
     }
+
     #gallery li{
         list-style: none;
         float: left;
@@ -15,19 +16,28 @@ require_once '../layout/admin-header.php';
         border: 1px solid #ccc;
         margin: 10px 1%;
     }
+
     #gallery li img{
-        width: 180px;
+        width: 230px;
         height: 230px;
     }
-    .clear-both{
-        clear: both;
-    }
+
     #gallery li input{
         width: 100%;
     }
+
 </style>
-    </head>
     <body>
+        <div class="container" style="margin-top: 10px;">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="text-center">Quản lý thư viện ảnh </h2>
+            </div>
+            <form id="upload-file-form" action="?upload=file" method="POST" enctype="multipart/form-data" style="margin-left: 20%; margin-top: 40px; margin-bottom: 30px;"> 
+                <label style="margin-right: 7%;font-weight: bold;">Chọn hình ảnh: </label>
+                <input multiple type="file" name="file_upload[]" />
+                <input type="submit" value="Tải ảnh lên" />
+            </form>
         <?php
         if (isset($_GET['upload']) && $_GET['upload'] == 'file') {
             $uploadedFiles = $_FILES['file_upload'];
@@ -36,7 +46,7 @@ require_once '../layout/admin-header.php';
                 print_r($errors);
                 exit;
             } else {
-                echo "Upload thành công. <a href='admin-gallery.php'>Upload thêm ảnh</a>";
+                echo "Tải lên thành công. <a  href='admin-gallery.php'>Xem lại thư viện ảnh</a>";
             }
             /**
              * Chú ý khi upload file
@@ -48,17 +58,7 @@ require_once '../layout/admin-header.php';
              */
         } else {
             ?>
-	<div class="container" style="margin-top: 10px;">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h2 class="text-center">Quản lý thư viện ảnh </h2>
-			</div>
-            <div id="upload-zone">
-                    <form id="upload-file-form" action="?upload=file" method="POST" enctype="multipart/form-data" style="margin-left: 34%; margin-top: 20px; margin-bottom: 30px;">
-                        <input multiple type="file" name="file_upload[]" />
-                        <input type="submit" value="Tải ảnh lên" />
-                    </form>
-            </div>
+	
             	<h2 class="text-center">Danh sách ảnh</h2>
             <?php
             $baseURL = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];

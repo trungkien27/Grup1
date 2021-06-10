@@ -86,7 +86,7 @@ function moveFileToPhotos($key) {
 
 function getAllFiles() {
     $allFiles = array();
-    $allDirs = glob('uploads/*');
+    $allDirs = glob('../admin/uploads/*');
     foreach ($allDirs as $dir) {
         $allFiles = array_merge($allFiles, glob($dir . "/*"));
     }
@@ -129,13 +129,20 @@ function validateUploadFile($file, $uploadPath) {
     if (!in_array($fileType, $validTypes)) {
         return false;
     }
-    //Check xem file đã tồn tại chưa? Nếu tồn tại thì đổi tên
-    $num = 1;
+    //Check xem file trùng tên thì ko cho up
     $fileName = substr($file['name'], 0, strrpos($file['name'], "."));
-    while (file_exists($uploadPath . '/' . $fileName . '.' . $fileType)) {
-        $fileName = $fileName . "(" . $num . ")";
-        $num++;
+    if (file_exists($uploadPath . '/' . $fileName . '.' . $fileType)) {
+		echo('Ảnh đã tồn tại');
+		return false;
     }
-    $file['name'] = $fileName . '.' . $fileType;
     return $file;
 }
+
+
+    //Check xem file đã tồn tại chưa? Nếu tồn tại thì đổi tên
+    // $num = 1;
+    // $fileName = substr($file['name'], 0, strrpos($file['name'], "."));
+    // while (file_exists($uploadPath . '/' . $fileName . '.' . $fileType)) {
+    //     $fileName = $fileName . "(" . $num . ")";
+    //     $num++;
+    // }

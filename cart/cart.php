@@ -11,10 +11,11 @@ include_once('../layout/header.php');
 
 	$idList = [];
 	foreach ($cart as $item) {
+		//push id của các item trong cart vào idList
 		$idList[] = $item['id'];
 	}
 	if(count($idList) > 0) {
-		//đưa idList về dạng mảng 
+		//đưa idList mảng về dạng chuỗi 
 		$idList = implode(',', $idList);
 		//[2, 5, 6] => 2,5,6
 
@@ -49,6 +50,10 @@ include_once('../layout/header.php');
 		foreach ($cart as $value) {
 			if($value['id'] == $item['id']) {
 				$num = $value['num'];
+				// if($num > 20) {
+					// $num = 20;
+					// $value['num'] = $num;
+				// }
 				break;
 			}
 		}
@@ -67,12 +72,12 @@ include_once('../layout/header.php');
 ?>
 				</tbody>
 			</table>
-			<p style="font-size: 30px; color: red">
-				Total: <?=number_format($total, 0, ',', '.')?>
+			<p style="font-size: 30px; color: red; float:right; margin-right: 10%;">
+				Tổng số tiền: <?=number_format($total, 0, ',', '.')?>
 			</p>
 
 			<a href="checkout.php">
-				<button class="btn btn-success" style="width: 100%; font-size: 32px;">Checkout</button>
+				<button class="btn btn-success" style="width: 100%; font-size: 32px;">Thanh toán</button>
 			</a>
 		</div>
 	</div>
