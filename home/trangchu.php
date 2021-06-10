@@ -1,20 +1,19 @@
 
 <?php
 	$title = "Nail | Home";
-	include_once('../layout/header.php');
-	
-//  	$user = validateToken();
-// if($user == null) {
-//  header('Location: ../user/login.php');
-//  die();
-//  }
+	include_once('../home/header.php');
+// 	$user = validateToken();
+// 	// if($user == null) {
+// 	// header('Location: ../user/login.php');
+// 	// die();
+// }
 ?>
 
 	<link rel="stylesheet" type="text/css" href="home.css">
 	<section class="hero1" style="font-size: 10px;">
 		<div class="text-wrapper">
 			<h1 class="headline">Nail Boutique</h1>
-			<h2 class="sub-headline">Nails are not just beauty, it is a lifestyle.</h2>
+			<h2 class="sub-headline">Nails are not just beauty,it is a lifestyle.</h2>
 		</div>
 	</section>
 	</div>
@@ -59,10 +58,6 @@
 	</div>		
 		<div class="bgimg-3">
 			<div class="caption">
-
-					<span class="border">
-						<div class="container" style="text-align: justify;">
-
 					<span class="border" >
 						<div class="container" style="text-align: center;">
 							<img src="mask.png" >
@@ -104,5 +99,5 @@
 			</div>
 		</div>
 <?php
-	include_once('../layout/footer.php');
+	include_once('../home/footer.php');
 ?>

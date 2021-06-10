@@ -27,10 +27,10 @@ html{
 }
 .headline{
 	top: 25%;
-	font-size: 5rem;
+	font-size: 15rem;
 	font-family:  'Herr Von Muellerhoff', cursive;
 	color: #c59d5f;
-	font-weight: 100px;
+	font-weight: 100;
 	line-height: .4;
 }
 .headline:first-letter{

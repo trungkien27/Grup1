@@ -5,7 +5,7 @@
 
 <body>
 	<link rel="stylesheet" type="text/css" href="jointeam.css">
-	<div style="width: 1360px;height: 1184px;display: flex;">
+	<div style="width: 1360px;height: 1211px;display: flex;">
 		<div class="join1" style="	width: 680px;height: 1184px;left: 79.5px; ">
 			<p class="font_a" style="vertical-align: initial;">Tham gia nhóm NB của chúng tôi</p>
 
@@ -16,7 +16,7 @@
 
 				<p class="font_b">Hãy cho chúng tôi biết cách chúng tôi có thể giúp bạn phát triển cùng với chúng tôi!</p>
 			</div>
-			<div style="width: 680px;height: 558px;">
+			<div style="width: 680px;height: 558px; margin-left: 40px;">
 				<form method="POST">
 					<div class="input_join">
 						<input required="true" type="text" name="fullname" placeholder="Họ Và Tên">
@@ -42,7 +42,7 @@
 					<div class="input_join">
 						<input  required="true" type="text" name="link" placeholder="Link CV">
 					</div>
-					<button>Gửi</button>
+					<button style="margin-top: 42px;margin-left: 231px;font-size: 24px;padding-left: 30px;padding-right: 30px;" class="btn btn-dark">Gửi</button>
 
 
 				</form>

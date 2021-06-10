@@ -1,6 +1,6 @@
 <?php
 	$title = "Nail | Dịch Vụ";
-	include_once('../layout/header.php');
+	include_once('../home/header.php');
 ?> 
 	<link rel="stylesheet" type="text/css" href="dichvu.css">
 	<div class="contai1">
@@ -15,7 +15,7 @@
 				</h1>
 			</div>
 		</div>
-		<div style="width: 100%;height: 1763px;background-color: #fff;color: #000;">
+		<div style="width: 100%;height: 1618px;background-color: #fff;color: #000;">
 			<div style="margin-top: 35px;width: 100%;height: 66.4px;">
 				<p class="dichvu">Dịch vụ của chúng tôi</p>
 			</div>
@@ -33,22 +33,22 @@
 				<div class="dichvu4" style="width: 50%">
 					
 				</div>
-				<div class="text" style="width: 50%">Cải tiến móng</div>
+				<div class="text" style="width: 50%">Cắt sửa móng tay & móng chân</div>
 			</div>
 			<div class="dd">
-				<div class="text" style="width: 50%">Cải tiến móng</div>
-				<div class="dichvu3" style="width: 50%">
+				<div class="text" style="width: 50%">Waxing</div>
+				<div class="dichvu5" style="width: 50%">
 					
 				</div>
 			</div>
 			<div class="dd">
-				<div class="dichvu4" style="width: 50%">
+				<div class="dichvu6" style="width: 50%">
 					
 				</div>
-				<div class="text" style="width: 50%">Cải tiến móng</div>
+				<div class="text" style="width: 50%">Thêm Ons</div>
 			</div>
 	</div>
 
 <?php
-	include_once('../layout/footer.php');
+	include_once('../home/footer.php');
 ?>

@@ -1,9 +1,9 @@
 <?php
 	$title = "Nail | About";
-	include_once('../layout/header.php');
+	include_once('../home/header.php');
 ?> 
 <link rel="stylesheet" type="text/css" href="about.css">
-	<div class="contai1">
+	<div class="contai1" style="background-color: #f8f8f8;">
 		<div class="about" >
 			<div class="text-ab">
 				<h1 style="width: 920px;height: 215px;">
@@ -16,7 +16,7 @@
 				</h1>
 			</div>
 		</div>
-		<div style="color: #000;background-color: #f8f8f8;text-align: justify;width: 100%;height: 630px">
+		<div style="color: #000;background-color: #f8f8f8;text-align: justify;width: 100%;height: 630px;">
 			<div class="text_12" style="text-align: center;">
 				<h2 style="width: 940px;height: 89.6px;text-align: center;margin-top: 75px;margin-left: 266px;">
 					<font class="font1" style="vertical-align: inherit;">Giá trị cốt lõi của chúng tôi</font>
@@ -74,5 +74,10 @@
 	</div>
 
 <?php
-	include_once('../layout/footer.php');
+	include_once('../home/footer.php');
 ?>
+ALTER TABLE order_details ADD FOREIGN KEY(product_id) REFERENCES product(id)
+ALTER TABLE order_details ADD FOREIGN KEY(oder_id) REFERENCES oders(id)
+ALTER TABLE feedback ADD FOREIGN KEY(user_id) REFERENCES user(id)
+ALTER TABLE oders ADD FOREIGN KEY(user_id) REFERENCES user(id)
+ALTER TABLE product ADD FOREIGN KEY(category_id) REFERENCES category(id)

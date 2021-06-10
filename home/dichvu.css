@@ -12,7 +12,7 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-image: url("dichvu.jpg");
+	background-image: url("jpg/dichvu.jpg");
     min-height: 100%;
     top: 0;
 }
@@ -50,7 +50,7 @@
 }
 .dichvu3 {
 	max-width: 460px;
-	background-image: url(dichvu2.jpg);
+	background-image: url(jpg/dichvu2.jpg);
 	height: 320px;
 	object-fit: cover;
     object-position: 50% 50%;
@@ -67,7 +67,27 @@
 }
 .dichvu4 {
 	max-width: 460px;
-	background-image: url(dichvu2.jpg);
+	background-image: url(jpg/dichvu4.jpg);
+	height: 320px;
+	object-fit: cover;
+    object-position: 50% 50%;
+    margin: 0px auto;
+    margin-left:  319px;
+    margin-right:-250px;
+}
+.dichvu5 {
+	max-width: 460px;
+	background-image: url(jpg/dichvu5.jpg);
+	height: 320px;
+	object-fit: cover;
+    object-position: 50% 50%;
+    margin: 0px auto;
+    margin-left: -250px;
+    margin-right: 226px;
+}
+.dichvu6 {
+	max-width: 460px;
+	background-image: url(jpg/dichvu6.jpg);
 	height: 320px;
 	object-fit: cover;
     object-position: 50% 50%;
