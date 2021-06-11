@@ -60,7 +60,7 @@
           </div>
         </a>
       </div>
-      <div class="sidebar-wrapper">
+<div class="sidebar-wrapper">
         <ul class="nav">
           <li>
             <a href="../admin/edit-category.php">
@@ -86,13 +86,13 @@
               <p>Bộ sưu tập ảnh</p>
             </a>
           </li>
-          <li class="active">
+          <li>
             <a href="../admin/admin-feedback.php">
               <i class="nc-icon nc-send"></i>
               <p>Phản hồi</p>
             </a>
           </li>
-          <li>
+          <li class="active">
             <a href="../admin/orders.php">
               <i class="nc-icon nc-delivery-fast"></i>
               <p>Quản lý đơn hàng</p>
@@ -109,26 +109,74 @@
     </div>
     <div class="main-panel" style="height: 100vh;">
       <div class="content">
-        <!-- content start here -->
+      	<!-- content start here -->
 <?php
-require_once '../layout/admin-header.php';
+require_once('../db/dbhelper.php');
+require_once('../utils/utility.php');
+$orderList = executeResult('SELECT orders.address, user.fullname, orders.order_date,orders.note, orders.phone_number, orders.id 
+  FROM  orders
+  left join user on orders.user_id  = user.id');
 ?>
-    <body>
-        <div class="container" style="margin-top: 10px;">
-        <?php
-        if (isset($_GET['url']) && !empty($_GET['url'])) {
-            $url = $_GET['url'];
-            unlink($url);
-            ?>
-                <h2 class="text-center">Xóa ảnh thành công</h2>
-                <a href="admin-gallery.php" style="text-align: center;">Danh sách ảnh</a>
-         </div>
-        <?php } ?>
-    </body>
-</html>
 
-        <!-- content end here -->
+<body>
+	<div class="container" style="margin-top: 10px;">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+       			<h2 class="text-center">Quản lý đơn hàng</h2>
+      <div class="panel-body">
+        <table class="table table-bordered" style="margin-top: 20px;">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Tên</th>
+              <th>Số điện thoại</th>
+              <th>Địa chỉ</th>
+              <th>Ngày đặt hàng</th>
+              <th>Chú thích</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+<?php
+$count = 0;
+  foreach ($orderList as $item) {
+    echo '
+      <tr>
+        <td>'.(++$count).'</td>
+        <th>'.$item['fullname'].'</th>
+        <th>'.$item['phone_number'].'</th>
+        <th>'.$item['address'].'</th>
+        <th>'.$item['order_date'].'</th>
+        <th>'.$item['note'].'</th>
+        <th><a href="order_details.php?id='.$item['id'].'" style="text-decoration-line: none;">Thông tin chi tiết</a></th>
+        <th><button onclick="deleteOrder('.$item['id'].')" class="btn btn-danger">Xoá</button></th>
+      </tr>
+    ';
+  }
+?>
+          </tbody>
+        </table>
+      </div>
     </div>
+<script type="text/javascript">
+  function deleteOrder(id) {
+    option = comfirm('Bạn có muốn xoá khách hàng này !?')
+    if (!option) return
+
+    $.post('form-orders.php', {
+      'action': 'delete',
+      'id': id 
+    }
+    ,function(data){
+      location.reload()
+    }
+  )
+</script>
+</body>
+</html>
+		<!-- content end here -->
+	</div>
 </div>
   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js"></script>
