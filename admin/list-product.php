@@ -7,8 +7,6 @@ require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
 require_once('../cart/api-product.php');
 
-
-
 if ($id = getGet('id')) {
 	$productList = executeResult('select * from product where category_id = '.$id);	
 } else {
@@ -39,6 +37,7 @@ if ($productList == null) {
 if (!empty($_GET)) {
 	if (isset($_GET['search'])) {
 		$search = $_GET['search'];
+
 
 	$sql = 'select * from product where title like "%'.$_GET['search'].'%"';
 	$productList = executeResult($sql);

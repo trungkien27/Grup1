@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?php echo isset($title) ? $title : "Default Title"; ?></title>
+	<title></title>
 	<meta charset="utf-8">				
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="robots" content="all,follow">
@@ -145,18 +145,13 @@
 				$count += $item['num'];
 			}
 		  ?>
-			<a href="cart.php">
+			<a href="../cart/cart.php">
 				<button type="button" class="btn btn-outline-danger btn-sm" style="font-size: 20px;border: none;">
+
 					 <i class="bi bi-cart3"></i><span style="font-weight: bold; color: #000000; "> <?=$count?></span>
 				</button>
 			</a>		
 	</nav>
 	</header>
-	<script type="text/javascript">
-  		 function changePageTitle() {
-            newPageTitle = 'The title has changed!';
-            document.title = newPageTitle;
-        }
-</script>
 	
 

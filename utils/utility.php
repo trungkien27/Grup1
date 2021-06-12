@@ -55,7 +55,10 @@ function moveFileToPhotos($key) {
 	// die();
 	//Đường dẫn chứa file đã được upload lên server 
 	$target_dir = "photos/";
-
+	
+	// if(isset($_FILES['picture'])){
+	//     echo $_FILES['picture']['tmp_name'];
+	// }
 	// $file              = $_FILES[$key]['name'];
 
 	// $path              = pathinfo($file);
