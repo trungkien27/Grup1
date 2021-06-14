@@ -1,9 +1,9 @@
 <?php
 require_once '../db/dbhelper.php';
 require_once '../utils/utility.php';
-  // $users = validateToken();
-  // $sql = "select  user.fullname from user ";
-  // $dataList = executeResult($sql);
+  $users = validateToken();
+  $sql = "select user.fullname from user ";
+  $dataList = executeResult($sql);
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +29,8 @@ require_once '../utils/utility.php';
 <style>
 
 .navbar {
-	/*position: fixed;*/
- 	top: 20;
+  /*position: fixed;*/
+  top: 20;
 }
 
 .topnav {
@@ -43,7 +43,7 @@ require_once '../utils/utility.php';
   display: block;
   color: #000;
   text-align: center;
-  padding: 14px 16px;
+  padding: 12px;
   text-decoration: none;
   font-size: 18px;
   font-family: Cambria;
@@ -215,12 +215,11 @@ require_once '../utils/utility.php';
   }
 
 ?>
-
-  <a href="../cart/cart.php">
-    <button type="button" class="btn btn-outline-danger btn-sm" style="font-size: 23px;border: none;margin-left:50px;">
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i> Giỏ hàng <span style="font-weight: bold; color: black;"><?=$count?></span>
-    </button>
-  </a>
+   <a href="../cart/cart.php">
+      <button class="btn btn-outline-dark btn-lg" style="border: none;">
+        <span style="font-family: Cambria;font-size: 22px;color: red;"><i class="fa fa-shopping-cart"></i> <?=$count?></span>
+      </button>
+    </a>
 </div>
 </header>
 
@@ -233,8 +232,5 @@ function myFunction() {
     x.className = "topnav";
   }
 }
- function changePageTitle() {
-            newPageTitle = 'The title has changed!';
-            document.title = newPageTitle;
-        }
+
 </script>

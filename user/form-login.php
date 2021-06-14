@@ -29,8 +29,7 @@ if(!empty($_POST)) {
 		die();
 	}
 	if(count($result) < 1) {
-		// echo('Email hoặc mật khẩu không đúng !!!');
 		header('Location: ../user/login.php');
-		echo('Email hoặc mật khẩu không đúng !!!');
+		// echo('Email hoặc mật khẩu không đúng !!!');
 	}
 }

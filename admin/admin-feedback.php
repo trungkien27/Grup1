@@ -93,7 +93,7 @@
             </a>
           </li>
           <li>
-            <a href="../admin/orders.php">
+            <a href="../admin/admin-orders.php">
               <i class="nc-icon nc-delivery-fast"></i>
               <p>Quản lý đơn hàng</p>
             </a>
@@ -107,7 +107,7 @@
         </ul>
       </div>
     </div>
-    <div class="main-panel" style="height: 100vh;">
+    <div class="main-panel" style="height: 1400px;">
       <div class="content">
       	<!-- content start here -->
 <?php
@@ -141,7 +141,7 @@ require_once('../utils/utility.php');
 						<a href="add-product.php"><button class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i>Thêm sản phẩm mới</button></a>		
 					</div> -->
 				</div>
-				<table class="table table-bordered" style="margin-top: 10px;">
+				<table class="table table-bordered" style="margin-top: 10px;background-color: white">
 					<thead>
 						<tr>
 							<th>STT</th>
@@ -158,11 +158,8 @@ require_once('../utils/utility.php');
 if (!empty($_GET)) {
 	if (isset($_GET['search'])) {
 		$search = $_GET['search'];
-
-
 	}
 }
-
 
 	$num_page = 6;
 	$page = 1;
@@ -181,13 +178,10 @@ if (!empty($_GET)) {
 	//lay so sp chia cho so sp tren 1 trang -> ra duoc so trang, lam tron len.
 	$totalPage = ceil($total/$num_page);
 
-	
-
 	$sql = "select id, user_id, title, note, picture, created_at from feedback limit ".$index.','.$num_page;
 
 	// $sql = 'select id, title, thumbnail, price, quantity, updated_at from product where title like "%'.$_GET['search'].'%" limit'.$index.','.$num_page;
 	$productList = executeResult($sql);
-
 
 	$count = $index;
 

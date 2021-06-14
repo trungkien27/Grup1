@@ -23,6 +23,12 @@ function getGet($key) {
 	return removeSpecialCharacter($value);
 }
 
+function getCOOKIE($key){
+		$value='';
+		if (isset($_COOKIE[$key])) {
+			$value = $_COOKIE[$key];
+		}
+}
 
 function getMD5Security($pwd) {
 	return md5(md5($pwd).MD5_PRIVATE_KEY);
