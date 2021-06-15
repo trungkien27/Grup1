@@ -1,5 +1,5 @@
 <?php
-	$title = "Nail | Join Our Team";
+	$title = "Nail | Tuyển Dụng";
 	include_once('../home/header.php');
 ?> 
 

@@ -33,14 +33,18 @@
 
     i {
       padding-right: 12px;
+      color: #000;
+      font-weight: bold;
     }
 
     li {
       list-style-type: none;
+      color: #000;
+      font-weight: bold;
     }
 
     body {
-      background-color: ghostwhite;
+      background-color: white;
     }
 
     h2 {
@@ -120,7 +124,7 @@ require_once('../utils/utility.php');
 require_once('form-product.php');
 ?>
 <!-- body START -->
-	<div class="container" style="margin-top: 10px;">
+	<div class="container" style="margin-top: 10px;background-color: #fff;">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h2 class="text-center">Quản lý sản phẩm</h2>
@@ -184,7 +188,7 @@ if (!empty($_GET)) {
 	$totalPage = ceil($total/$num_page);
 
 	//lay tu product o vi tri index, lay num_page phan tu
-	$sql = "select id, title, thumbnail, price, quantity, updated_at from product limit ".$index.','.$num_page;
+	$sql = "select id, title, thumbnail, price, quantity, created_at from product limit ".$index.','.$num_page;
 
 	// $sql = 'select id, title, thumbnail, price, quantity, updated_at from product where title like "%'.$_GET['search'].'%" limit'.$index.','.$num_page;
 	$productList = executeResult($sql);
@@ -199,7 +203,7 @@ if (!empty($_GET)) {
 				<td><a href="product-detail.php?id='.$item['id'].'"><img src="'.$item['thumbnail'].'" style="width: 160px;"/></a></td>
 				<td style="width:110px;">'.$item['price'].'</td>
 				<td style="width:110px;">'.$item['quantity'].'</td>
-				<td style="width:200px;">'.$item['updated_at'].'</td>
+				<td style="width:200px;">'.$item['created_at'].'</td>
 				<td style="width:110px;"><a href="add-product.php?id='.$item['id'].'"><button class="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sửa</button></a></td>
 				<td style="width:110px;"><button class="btn btn-danger" onclick="deleteProduct('.$item['id'].')"><i class="fa fa-trash-o" aria-hidden="true"></i>Xóa</button></td>
 			</tr>';

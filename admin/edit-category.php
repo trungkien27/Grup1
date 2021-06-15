@@ -33,14 +33,18 @@
 
     i {
       padding-right: 12px;
+      color: #000;
+      font-weight: bold;
     }
 
     li {
       list-style-type: none;
+      color: #000;
+      font-weight: bold;
     }
 
     body {
-      background-color: ghostwhite;
+      background-color: white;
     }
 
     h2 {
@@ -125,7 +129,7 @@ require_once('form-category.php');
 			</div>
 			<div class="panel-body">
 				<a href="add-category.php"><button class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i>Thêm danh mục sản phẩm mới</button></a>	
-				<table class="table table-bordered" style="margin-top: 10px;">
+				<table class="table table-bordered" style="margin-top: 10px; background-color: #fff;">
 					<thead>
 						<tr>
 							<th>STT</th>

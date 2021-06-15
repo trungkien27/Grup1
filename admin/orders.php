@@ -33,14 +33,18 @@
 
     i {
       padding-right: 12px;
+      color: #000;
+      font-weight: bold;
     }
 
     li {
       list-style-type: none;
+      color: #000;
+      font-weight: bold;
     }
 
     body {
-      background-color: ghostwhite;
+      background-color: white;
     }
 
     h2 {
@@ -119,7 +123,7 @@ $orderList = executeResult('SELECT orders.address, user.fullname, orders.order_d
 ?>
 
 <body>
-	<div class="container" style="margin-top: 10px;">
+	<div class="container" style="margin-top: 10px;background-color: #fff;">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
        			<h2 class="text-center">Quản lý đơn hàng</h2>

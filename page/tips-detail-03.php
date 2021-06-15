@@ -1,5 +1,5 @@
 <?php
-include_once('../layout/header.php');
+include_once('../home/header.php');
 
 ?>
 </head>
@@ -82,5 +82,5 @@ include_once('../layout/header.php');
 	</div>
 
 <?php 
-include_once('../layout/footer.php');
+include_once('../home/footer.php');
 ?>

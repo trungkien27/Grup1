@@ -14,7 +14,7 @@ if(!empty($_POST)) {
 	if(!empty($password) && !empty($email)) {
 		//Kiem tra username & email <> null -> check bao mat phia server
 		//Xem username va email da ton tai trong database
-		$sql = "select * from users where email = '$email'";
+		$sql = "select * from user where email = '$email'";
 		$result = executeResult($sql);
 		// var_dump($result);
 		if($result != null && sizeof($result) > 0) {
@@ -26,7 +26,7 @@ if(!empty($_POST)) {
 			$password = getMD5Security($password);
 			// echo $password;die();
 
-			$sql = "insert into users (fullname, email, password, created_at, updated_at) values ('$fullname', '$email', '$password', '$created_at', '$updated_at')";
+			$sql = "insert into user (fullname, email, password, created_at, updated_at) values ('$fullname', '$email', '$password', '$created_at', '$updated_at')";
 			execute($sql);
 
 			header('Location: login.php');

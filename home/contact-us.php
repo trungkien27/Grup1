@@ -5,18 +5,18 @@
 <link rel="stylesheet" type="text/css" href="contact.css">
 	<div class="contact-warp">
 		<div class="contact-in">
-			<h1>Contact Info</h1>
-			<h2 style="color: #fff;"><i class="far fa-calendar-alt"></i> Business Hours</h2>
-			<p>Monday - Friday: 10:00AM - 7:30PM</p>
-			<p>Saturday: 9:00AM - 7:00PM</p>
-			<p>Sunday: 11:00AM - 6:00PM</p>
-			<h2 style="color: #fff;"><i class="fas fa-map-marker-alt"></i> Address</h2>
+			<h1>THÔNG TIN LIÊN LẠC</h1>
+			<h2 style="color: #fff;"><i class="far fa-calendar-alt"></i>  Giờ kinh doanh</h2>
+			<p>Thứ Hai - Thứ Sáu: 10:00 sáng - 7:30 tối</p>
+			<p>Thứ Bảy: 9:00 sáng - 7:00 tối</p>
+			<p>Chủ nhật: 11:00 sáng - 6:00 tối</p>
+			<h2 style="color: #fff;"><i class="fas fa-map-marker-alt"></i> Địa chỉ</h2>
 			<p>3rd floor, 54 Le Thanh Nghi, Hai Ba Trung, Hanoi, Vietnam</p>
-			<h2><i class="fas fa-phone-alt"></i> Phone</h2>
+			<h2><i class="fas fa-phone-alt"></i> Điện thoại</h2>
 			<p style="color: #000;">+841 6666 8888</p>
 			<h2><i class="fas fa-envelope"></i>Email</h2>
 			<p style="color: #000;">ABC@aptechlearning.edu.vn</p>
-			<h2>Ask about our referral program! </h2>
+			<h2>Hỏi về chương trình giới thiệu của chúng tôi! </h2>
 			<ul>
 				<li><a href="https://www.facebook.com/nbnailboutique"><i class="fab fa-facebook-square"></i></a></li>
 				<li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
@@ -25,7 +25,7 @@
 			</ul>
 		</div>
 		<div class="contact-in">
-			<h1 style="color: #000;">Send A Messege</h1>
+			<h1 style="color: #000;">GỬI MỘT MESSEGE</h1>
 			<form method="post">
 				<input required="true" type="text" name="fullame" class="contact-in-input" placeholder="Họ và Tên">
 				<input required="true" type="email" name="email" class="contact-in-input" placeholder="Email">

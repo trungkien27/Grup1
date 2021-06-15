@@ -1,6 +1,6 @@
 <?php
 $title ="Nail | Gallery";
-include_once('../layout/header.php');
+include_once('../home/header.php');
 ?>
  <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -25,5 +25,5 @@ require_once '../utils/utility.php';
 	</div> 
 </body>
 <?php 
-include_once('../layout/footer.php');
+include_once('../home/footer.php');
 ?>

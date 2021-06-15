@@ -9,7 +9,7 @@ require_once '../utils/utility.php';
 <!DOCTYPE html>
 <html>
 <head>
-  <title><?php echo isset($title) ? $title : "Default Title"; ?></title>
+  <title><?php echo isset($title)  ?></title>
   <meta charset="utf-8">    
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">

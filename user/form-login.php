@@ -9,7 +9,7 @@ if(!empty($_POST)) {
 	$password = getMD5Security($password);
 
 	//check tai khoan co ton tai trong database
-	$sql = "select * from users where email = '$email' and password = '$password'";
+	$sql = "select * from user where email = '$email' and password = '$password'";
 	$result = executeResult($sql);
 	// var_dump($result);
 	if($result != null && sizeof($result) == 1) {
@@ -20,7 +20,7 @@ if(!empty($_POST)) {
 		setcookie('token', $token, time() + 7*24*60*60, '/');
 
 		$email = $result[0]['email'];
-		$sql = "update users set token = '$token' where email = '$email'";
+		$sql = "update user set token = '$token' where email = '$email'";
 		execute($sql);
 
 		header('Location: ../home/trangchu.php');

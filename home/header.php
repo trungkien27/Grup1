@@ -1,8 +1,8 @@
 <?php
 	require_once('../db/dbhelper.php');
 	require_once('../utils/utility.php');
-	$users = validateToken();
-	$sql = "select  users.fullname from users ";
+	$user = validateToken();
+	$sql = "select  user.fullname from user ";
 	$dataList = executeResult($sql);
 
 ?>
@@ -47,6 +47,42 @@
 		.dropdown:hover .dropdown-menu {
 			display: block;
 		}
+		header .link-icons {
+			display: flex;
+			flex-grow: 1;
+			flex-basis: 0;
+			justify-content: flex-end;
+			align-items: center;
+			position: relative;
+		}
+		header .link-icons a {
+			text-decoration: none;
+			color: #394352;
+			padding: 0 10px;
+		}
+		header .link-icons a:hover {
+			color: #f12020;
+		}
+		header .link-icons a i {
+			font-size: 25px;
+			color: #000;
+		}
+		header .link-icons a span {
+			display: inline-block;
+			text-align: center;
+			background-color: #000;
+			border-radius: 50%;
+			color: #FFFFFF;
+			font-size: 12px;
+			line-height: 16px;
+			width: 17px;
+			height: 17px;
+			font-weight: bold;
+			position: absolute;
+			top: -4px;
+			right: 0;
+			border: 1px solid #fff;
+		}
 		/*@media screen and (max-width: 900px) {
   		.topnav a:not(:first-child), .dropdown .dropbtn {
     		display: none;
@@ -63,7 +99,11 @@
     		right: 0;
     		top: 0;
 		}
+
 */
+		.navbar-brand img{
+			height: 38px;
+		}
 		header{
 		  position: fixed;
 		  top: 0;
@@ -79,7 +119,7 @@
 </head>
 <body style="margin-top: 0px;">
 	<header>
-		<nav class="navbar navbar-expand-sm  navbar-light " style="background-color: #ffffff;">
+		<nav class="navbar navbar-expand-sm  navbar-light " style="background-color: #ffffff; font-size: 15px;">
 		<a class="navbar-brand" href="../home/trangchu.php">
     		<img  src="https://static.wixstatic.com/media/4e382d_0d579ec3ec6241af9e1380ed79c56b7b~mv2.png/v1/fill/w_406,h_46,al_c,q_85,usm_0.66_1.00_0.01/Asset%202_3x.webp" alt="logo" style="width:100%;">
  		</a>
@@ -101,10 +141,10 @@
 		     </div>
 	    </li>
 	    <li class="nav-item active">	    	
-	      <a class="nav-link" href="#">Cửa Hàng</a>
+	      <a class="nav-link" href="../admin/list-product.php">Cửa Hàng</a>
 	    </li>
 	    <li class="nav-item active dropdown">
-	      <a class="nav-link dropdown-toggle" href="#">Hình Ảnh Chỉa Sẻ</a>
+	      <a class="nav-link dropdown-toggle" href="#">Hình Ảnh & Chỉa Sẻ</a>
 	         <div class="dropdown-menu" style="border: none; font-weight: bold;line-height: 30px;">
 		        <a style="font-weight: bold;" class="dropdown-item" href="../page/gallery.php">Thư Viện Ảnh</a>
 		        <a style="font-weight: bold;" class="dropdown-item" href="../page/tips.php">Tips Chỉa Sẻ</a>
@@ -114,13 +154,13 @@
 	      <a class="nav-link" href="../home/contact-us.php">Liên Hệ</a>
 	    </li>
 	    <li class="nav-item active">
-	      <a class="nav-link" href="../home/jointeam.php">Join Our Team</a>
+	      <a class="nav-link" href="../home/jointeam.php">Tuyển Dụng</a>
 	    </li>
 	   
 
 <?php	if(validateToken() != null) {?>
-			<li class="nav-item active dropdown">
-		        <a class="nav-link dropdown-toggle" href=""><?=$users['fullname']?></a>
+			<li style="width: 180px;" class="nav-item active dropdown">
+		        <a class="nav-link dropdown-toggle" href=""><?=$user['fullname']?></a>
 		     <div class="dropdown-menu" style="border: none; font-weight: bold;line-height: 30px;">
 		        <a style="font-weight: bold;" class="dropdown-item" href="">Thông Tin Tài Khoản</a>
 		        <a style="font-weight: bold;" class="dropdown-item" href="../user/logout.php">Đăng Xuất</a>
@@ -145,11 +185,21 @@
 				$count += $item['num'];
 			}
 		  ?>
-			<a href="cart.php">
+	<?php	if(validateToken() != null) {?>
+			
+				 <div class="link-icons">
+					<a href="../cart/cart.php">
+					 <i class="fas fa-shopping-cart"></i><span> <?=$count?></span>
+					</a>
+				</div>
+				
+		<?php	}else{ ?>
+			<a href="../user/login.php">
 				<button type="button" class="btn btn-outline-danger btn-sm" style="font-size: 20px;border: none;">
 					 <i class="bi bi-cart3"></i><span style="font-weight: bold; color: #000000; "> <?=$count?></span>
 				</button>
-			</a>		
+			</a>
+			<?php	} ?>
 	</nav>
 	</header>
 	<script type="text/javascript">

@@ -33,14 +33,18 @@
 
     i {
       padding-right: 12px;
+      color: #000;
+      font-weight: bold;
     }
 
     li {
       list-style-type: none;
+      color: #000;
+      font-weight: bold;
     }
 
     body {
-      background-color: ghostwhite;
+      background-color: white;
     }
 
     h2 {

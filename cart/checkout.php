@@ -1,7 +1,7 @@
 <?php
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
-include_once('../layout/header.php');
+include_once('../home/header.php');
 
 require_once('checkout-form.php');
 
@@ -39,12 +39,14 @@ $token = '';
 		$cartList = [];
 	}
 ?>
-<!-- body -->
-<form method="post">
+<body style="background-color: #f8f8f8;">
+<link rel="stylesheet" type="text/css" href="checkout.css">
+	<form method="post">
 	<div class="container" style="margin-top:7%;">
 		<div class="row">
-			<div class="col-md-5">
-				<h3>Thông tin giao hàng </h3>
+			<div class="col-md-5" >
+				<div class="thanh"></div>
+				<h3><span class="fas fa-map-marker-alt"></span>Địa Chỉ Nhận Hàng </h3>
 				<div class="form-group" style="display:none;">
 				  <label for="userid">userid:</label>
 				  <input type="number" class="form-control" id="userID" name="userID" value="<?=$user['id']?>">
@@ -66,19 +68,21 @@ $token = '';
 				  <textarea class="form-control" rows="4" name="note" id="note"></textarea>
 				</div>
 			</div>
-			<div class="col-md-7">
-				<h3>Giỏ hàng </h3>
-				<table class="table table-bordered table-responsive">
-					<thead>
-						<tr>
-							<th>STT </th>
-							<th>Tên sản phẩm </th>
-							<th>Số lượng </th>
-							<th>Giá </th>
-							<th>Tổng cộng </th>
-						</tr>
-					</thead>
-					<tbody>
+			<div class="col-md-7">	
+				<div class="container">
+					<h3> Sản Phẩm</h3>
+					<div class="table-responsive">
+						<table class="table" style="background-color: #fff;">
+							<thead class="thead-dark">
+								<tr >
+									<th scope="col" class="text-white">STT</th>
+									<th scope="col" class="text-white">Tên Sản Phẩm</th>
+									<th scope="col" class="text-white">Số Lượng</th>
+									<th scope="col" class="text-white">Số Tiền</th>
+									<th scope="col" class="text-white">Tổng Cộng</th>
+								</tr>
+							</thead>
+							<tbody>
 <?php
 	$count = 0;
 	$total = 0;
@@ -101,13 +105,23 @@ $token = '';
 			</tr>';
 	}
 ?>
-					</tbody>
-				</table>
-				<p style="font-size: 30px; color: red">
-					Tổng số tiền:<?=number_format($total, 0, ',', '.')?>
-				</p>
-
-				<button class="btn btn-success" style="width: 100%; font-size: 32px;">Hoàn thành </button>
+							</tbody>
+							</table>
+							<div class="thanhtoan" style="">
+								<div  style="background-color: #ffffff;height: 50px;">
+									<span style="float: left;font-size: 23px;font-weight: bold;margin-top: 10px;">Phương thức thanh toán</span>
+									<span style="float: right;margin-top: 10px;">Thanh toán khi nhận hàng</span>
+									
+								</div>
+								<p><span >Tổng tiền hàng:</span><span style="margin-left: 68%"><?=number_format($total, 0, ',', '.')?>đ</span></p>
+								<p><span>Phí vận chuyển:</span><span style="margin-left: 68%">20.000đ</span></p>
+								<p><span>Tổng thanh toán:</span><span style="margin-left: 68%;font-size: 25px;font-weight: bold;"><?=number_format($num*$item['price']+20000)?>đ</span></p>
+								<div style="height: 50px;border-top: 1px dashed rgba(0,0,0,.09);">
+									<button style="float: right;margin-top: 19px;margin-right: 32px;" class="btn btn-dark">Đặt Hàng</button>
+							</div>	
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -123,5 +137,5 @@ $token = '';
 	}
 </script>
 <?php
-	include_once('../layout/footer.php');
+	include_once('../home/footer.php');
 ?>

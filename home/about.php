@@ -76,8 +76,3 @@
 <?php
 	include_once('../home/footer.php');
 ?>
-ALTER TABLE order_details ADD FOREIGN KEY(product_id) REFERENCES product(id)
-ALTER TABLE order_details ADD FOREIGN KEY(oder_id) REFERENCES oders(id)
-ALTER TABLE feedback ADD FOREIGN KEY(user_id) REFERENCES user(id)
-ALTER TABLE oders ADD FOREIGN KEY(user_id) REFERENCES user(id)
-ALTER TABLE product ADD FOREIGN KEY(category_id) REFERENCES category(id)
