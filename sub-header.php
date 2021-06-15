@@ -13,5 +13,11 @@
 <?php	} ?>
   
 
-
-  
+list category
+              <?php
+                    foreach ($categoryList as $item) {
+                      echo '<li>
+                        <a href="../admin/list-product.php?id='.$item['id'].'">'.$item['title'].'</a>';
+                      echo "</li>";
+                    }
+                    ?>

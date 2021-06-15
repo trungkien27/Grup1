@@ -1,6 +1,6 @@
 <?php
 	$title = "Nail | Dịch Vụ";
-	include_once('../home/header.php');
+	include_once('../layout/header.php');
 ?> 
 	<link rel="stylesheet" type="text/css" href="dichvu.css">
 	<div class="contai1">
@@ -24,7 +24,7 @@
 			</div>
 			
 			<div class="dd">
-				<div class="text" style="width: 50%">Cải tiến móng</div>
+				<div class="text" style="width: 50%">Cải thiện móng</div>
 				<div class="dichvu3" style="width: 50%">
 					
 				</div>
@@ -45,10 +45,10 @@
 				<div class="dichvu6" style="width: 50%">
 					
 				</div>
-				<div class="text" style="width: 50%">Thêm Ons</div>
+				<div class="text" style="width: 50%">Spa đá nóng</div>
 			</div>
 	</div>
 
 <?php
-	include_once('../home/footer.php');
+	include_once('../layout/footer.php');
 ?>

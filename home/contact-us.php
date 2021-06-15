@@ -1,6 +1,22 @@
 <?php
 	$title = "Nail | Contact-Us";
-	include_once('../home/header.php');
+	include_once('../layout/header.php');
+	require_once('contact-form.php');
+
+if (validateToken() == null) {
+	header('Location: ../user/login.php');
+	die();
+}
+
+//dùng token tìm thông tin user_id trong bảng user 
+$token = '';
+	if(isset($_COOKIE['token'])) {
+		$token = $_COOKIE['token'];
+		
+		$find_id = "select * from user where token = '$token'";
+		$user = executeResult($find_id, true);
+}
+//
 ?>
 <link rel="stylesheet" type="text/css" href="contact.css">
 	<div class="contact-warp">
@@ -25,12 +41,20 @@
 			</ul>
 		</div>
 		<div class="contact-in">
+<<<<<<< HEAD
 			<h1 style="color: #000;">GỬI MỘT MESSEGE</h1>
+=======
+			<h1 style="color: #000;">Gửi phản hồi cho chúng tôi nhé !</h1>
+>>>>>>> 7952b6f156d37be95179a282a6f09c662ca75db0
 			<form method="post">
-				<input required="true" type="text" name="fullame" class="contact-in-input" placeholder="Họ và Tên">
-				<input required="true" type="email" name="email" class="contact-in-input" placeholder="Email">
+				<div class="form-group" style="display:none;">
+				  <label for="userid">userid:</label>
+				  <input type="number" class="form-control" id="userID" name="userID" value="<?=$user['id']?>">
+				</div>
 				<input required="true" type="text" name="title" class="contact-in-input" placeholder="Tiêu Đề">
-				<textarea placeholder="Nôi Dung" required style="margin-top: 0px;" row="5" class="contact-in-textarea"></textarea>
+				<textarea placeholder="Nội Dung" required="true" style="margin-top: 0px;" row="5" class="contact-in-textarea" name="note"></textarea>
+				<input type="file" class="contact-in-input" id="picture" name="picture">
+				<img src="<?=($thisProduct != null)?$thisProduct['thumbnail']:''?>" style="max-height: 200px;">
 				<button class="contact-in-btn btn btn-outline-danger">Gửi</button>
 			</form>
 		</div>
@@ -39,6 +63,6 @@
 		</div>
 	</div>
 <?php
-	include_once('../home/footer.php');
+	include_once('../layout/footer.php');
 ?>
 			

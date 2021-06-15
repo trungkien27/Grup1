@@ -97,7 +97,7 @@
             </a>
           </li>
           <li>
-            <a href="../admin/orders.php">
+            <a href="../admin/admin-orders.php">
               <i class="nc-icon nc-delivery-fast"></i>
               <p>Quản lý đơn hàng</p>
             </a>
@@ -111,7 +111,7 @@
         </ul>
       </div>
     </div>
-    <div class="main-panel" style="height: 100vh;">
+    <div class="main-panel" style="height: 1400px;">
       <div class="content">
         <!-- content start here -->
 <?php

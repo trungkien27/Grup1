@@ -14,7 +14,7 @@ if(!empty($_POST)) {
 	// var_dump($result);
 	if($result != null && sizeof($result) == 1) {
 		//login thanh cong
-		//sinh ra token -> duy nhat cho tung tai khoan nguoi dung + duy nhat tai tung thoi diem login -> bao mat.
+		//dùng thời điểm log in + email người dùng -> tạo ra token.
 		//token -> cookie & database -> verify lai cookie & database -> la nguoi dung nao
 		$token = getMD5Security(time().$result[0]['email']);
 		setcookie('token', $token, time() + 7*24*60*60, '/');
@@ -23,7 +23,13 @@ if(!empty($_POST)) {
 		$sql = "update user set token = '$token' where email = '$email'";
 		execute($sql);
 
-		header('Location: ../home/trangchu.php');
+		if ($email == 'admin@admin.com') {
+			header('Location: ../admin/edit-category.php');
+		} else header('Location: ../home/trangchu.php');
 		die();
+	}
+	if(count($result) < 1) {
+		header('Location: ../user/login.php');
+		// echo('Email hoặc mật khẩu không đúng !!!');
 	}
 }

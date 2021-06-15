@@ -97,7 +97,7 @@
             </a>
           </li>
           <li>
-            <a href="../admin/orders.php">
+            <a href="../admin/admin-orders.php">
               <i class="nc-icon nc-delivery-fast"></i>
               <p>Quản lý đơn hàng</p>
             </a>
@@ -111,7 +111,7 @@
         </ul>
       </div>
     </div>
-    <div class="main-panel" style="height: 100vh;">
+    <div class="main-panel" style="height: 1400px;">
       <div class="content">
       	<!-- content start here -->
 <?php
@@ -129,7 +129,10 @@ require_once('form-category.php');
 			</div>
 			<div class="panel-body">
 				<a href="add-category.php"><button class="btn btn-info"><i class="fa fa-plus" aria-hidden="true"></i>Thêm danh mục sản phẩm mới</button></a>	
-				<table class="table table-bordered" style="margin-top: 10px; background-color: #fff;">
+
+
+				<table class="table table-bordered" style="margin-top: 10px;background-color: white">
+
 					<thead>
 						<tr>
 							<th>STT</th>

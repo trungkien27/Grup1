@@ -2,12 +2,10 @@
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
 
-
 if(validateToken() != null) {
 	header('Location: ../home/trangchu.php');
 	die();
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,10 +31,9 @@ if(validateToken() != null) {
 						<img src="gp.png">
 					</div>
 					<form id="login" method="POST" class="input-group" action="../user/form-login.php">
-						
+
 						<input type="text" name="email" id="email" class="input-field" placeholder=" Email" required="true" >
 
-						
 						<input type="password" name="password" class="input-field" placeholder=" Password" required="true" >
 
 						<input type="checkbox" class="check-box" value="lsRememberMe"><span for>Remeber Password</span>

@@ -23,6 +23,12 @@ function getGet($key) {
 	return removeSpecialCharacter($value);
 }
 
+function getCOOKIE($key){
+		$value='';
+		if (isset($_COOKIE[$key])) {
+			$value = $_COOKIE[$key];
+		}
+}
 
 function getMD5Security($pwd) {
 	return md5(md5($pwd).MD5_PRIVATE_KEY);
@@ -55,7 +61,10 @@ function moveFileToPhotos($key) {
 	// die();
 	//Đường dẫn chứa file đã được upload lên server 
 	$target_dir = "photos/";
-
+	
+	// if(isset($_FILES['picture'])){
+	//     echo $_FILES['picture']['tmp_name'];
+	// }
 	// $file              = $_FILES[$key]['name'];
 
 	// $path              = pathinfo($file);

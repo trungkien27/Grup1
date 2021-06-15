@@ -1,6 +1,8 @@
 <?php
+$title = "Trang thanh toán ";
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
+<<<<<<< HEAD
 include_once('../home/header.php');
 
 require_once('checkout-form.php');
@@ -20,11 +22,6 @@ $token = '';
 }
 //
 
-	$cart = [];
-	if(isset($_COOKIE['cart'])) {
-		$json = $_COOKIE['cart'];
-		$cart = json_decode($json, true);
-	}
 	$idList = [];
 	foreach ($cart as $item) {
 		$idList[] = $item['id'];
@@ -39,9 +36,15 @@ $token = '';
 		$cartList = [];
 	}
 ?>
+<<<<<<< HEAD
 <body style="background-color: #f8f8f8;">
 <link rel="stylesheet" type="text/css" href="checkout.css">
 	<form method="post">
+=======
+<!-- body -->
+
+<form method="post">
+>>>>>>> 7952b6f156d37be95179a282a6f09c662ca75db0
 	<div class="container" style="margin-top:7%;">
 		<div class="row">
 			<div class="col-md-5" >
