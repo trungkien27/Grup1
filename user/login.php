@@ -3,7 +3,7 @@ require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
 
 if(validateToken() != null) {
-	header('Location: ../home/trangchu.php');
+	header('Location: ../home/index.php');
 	die();
 }
 ?>
@@ -15,8 +15,8 @@ if(validateToken() != null) {
 
 </head>
 <body>
-<body background="baner.jpg">
-	<link rel="stylesheet" type="text/css" href="login.css">
+<body background="../pictures/baner.jpg">
+	<link rel="stylesheet" type="text/css" href="../css/login.css">
 	<div class="dangnhap">
 			<div class="hero">
 				<div class="form-box">
@@ -26,9 +26,9 @@ if(validateToken() != null) {
 						<button  type="button" class="toggle-btn" onclick="register()">Register</button>								
 					</div>
 					<div class="social-icon">
-						<img src="fb.png">
-						<img src="tw.png">
-						<img src="gp.png">
+						<img src="../pictures/fb.png">
+						<img src="../pictures/tw.png">
+						<img src="../pictures/gp.png">
 					</div>
 					<form id="login" method="POST" class="input-group" action="../user/form-login.php">
 

@@ -2,18 +2,16 @@
 // session_start();
 
 $title = 'Nail | Product Page';
-include_once('../home/header.php');
+include_once('../layout/header.php');
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
 require_once('../cart/api-product.php');
 
-$search = getGet('search');
-$cate=getGET('cate');
-
-if ($cate !='') {
-	$tail1=' and category_id ='.$cate;
+$category=getGET('category');
+if ($category !='') {
+	$tail1=' and category_id ='.$category;
 }else{ 
-	$tail1='';
+	$tail1= '';
 }
 
 $search = getGet('search');
@@ -23,12 +21,14 @@ if ($search != '') {
 	$tail2 = '';
 }
 
-$totalItems = executeResult("select count(*) as countItem from product join category 
+$totalItems = executeResult("select count(*) 'dem' from product join category 
 	where
-		product.category_id = category.id".$tail1, $tail2, true);
+		product.category_id = category.id".$tail1.$tail2, true);
 
-$total = $totalItems['countItem'];
-$href = 'list-product.php?cate='.$tail1.'&search='.$search.'&';
+$total = $totalItems['dem'];
+var_dump($total);
+
+$href = 'list-product.php?category='.$category.'&search='.$search.'&';
 
 $page = getGet('page');
 if ($page == '') {
@@ -42,133 +42,141 @@ $start = ($page - 1) * $limit;
 $data = executeResult("select product.* from product join category
 	where
 		product.category_id = category.id ".$tail1.$tail2."
-			order by updated_at DESC limit $start, $limit ");
-		
+			order by product.title DESC limit $start, $limit ");
 ?>
 
 
-<link rel="stylesheet" type="text/css" href="list-product.css">
+<link rel="stylesheet" type="text/css" href="../css/list-product.css">
 <body>
-<<<<<<< HEAD
-<!-- <div style="margin-left: 940px;margin-top: 30px;">
- --><form style="margin-top: 50px;display: flex;margin-left: 1087px;" class="search-box" method="get">
-		<input type="text" name="search" placeholder="Tìm Kiếm">
-		<button class="search-btn" type="submit" name="button">
-		<i class="fas fa-search"></i>
-		</button>
-	</form>
-<!-- </div> -->
-<section  class="product-section" style="margin-top: 54px; ">
-    
-		<div class="container">
-			<div class="row" >
-				<div class="col-md-12"><h3 class="title-pro">SẢN PHẨM</h3></div>
-							
-=======
+	<div class="about" >
+			<div class="text-ab">
+				<h1 style="width: 920px;height: 215px;">
+					<span style="color: #fff;">
+						<font style="vertical-align: inherit;">
+							<font class="font" style="vertical-align: inherit;">Sản Phẩm Của Chúng tôi luôn đạt chất lương tốt nhất
+							</font>
+						</font>
+					</span>
+				</h1>
+			</div>
+		</div>
+<form style="margin-top: 78px;display: flex;" class="search-box" method="get">
+	<!-- <input type="text" name="search" placeholder="Tìm Kiếm"> -->
+	<input type="text" name="search" placeholder="Tìm Kiếm">
+	<button class="search-btn" type="submit" name="button" style="outline: none;">
+	<i class="fas fa-search"></i>
+	</button>
+</form>
+<section  class="product-section" style="margin-top: 54px;">
+	<div class="container-fluid">
+		<div class="col-md-12"><h3 class="title-pro">Sản Phẩm</h3></div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="box1">
+					<h3 >Danh Mục</h3>
+					<ul>
+					<?php
+						$count = 0;
+						$cate = executeResult("select * from category");
+						// var_dump($cate.id);
+						foreach ($cate as $item) {
+							$cate_id = $item['id'];
 
-<?php
-foreach ($data as $item) {
-	echo '<div class="col-md-3">
-				<div class="product-box">
-					<div class="product-img">
-						<p href="../cart/detail.php?id='.$item['id'].'"><img src="'.$item['thumbnail'].'" style="width: 100%"></p>
-					</div>
-
-					<div class="product-content">
-						<a href="../cart/detail.php?id='.$item['id'].'"  style="text-decoration: none;"><h4 style="height: 34.91px;" >'.$item['title'].'</h4></a>
-
-<<<<<<< HEAD
-foreach ($productList as $item) {
-	echo '<div class="col-md-3">
-				<div class="product-box" >
-					<div class="product-img" href="../cart/detail.php>
-						<a ?id='.$item['id'].'"><img src="'.$item['thumbnail'].'" style="width: 100%"></a>
-					</div>
-
-					<div class="product-content">
-						<a style="text-decoration: none;" href="../cart/detail.php?id='.$item['id'].'"><h4 style="height: 34.91px;" >'.$item['title'].'</h4></a>
-
-						<div class="price">
-							<p >'.number_format($item['price'], 0, '', '.').' VND</p>
-						</div>		
-					<button style="margin-bottom: 10px;color: #fff;border-radius: 7px;" class="btn-dark" onclick="addToCart('.$item['id'].')"></i> Thêm vào giỏ</button>
-=======
-						<div class="price">
-							<p >'.number_format($item['price'], 0, '', '.').' VND</p>
-						</div>		
-					<button style="margin-bottom: 10px;color: #fff" class="btn-dark" onclick="addToCart('.$item['id'].')"></i> Thêm vào giỏ</button>
->>>>>>> 7952b6f156d37be95179a282a6f09c662ca75db0
-					</div>
-		        </div>							
-		 </div>';
-}
-<<<<<<< HEAD
-?>
-									
-		</div>		
-	</div>
-</section>
-	
-
-	
-=======
-?>							
-		</div>		
-	</div>
-</section>
-	<div class="container" style="margin-bottom: 5%; margin-left: 43%;">
-		<ul class="pagination">
-			<?php
-				if ($page > 1 ) {
-					echo '<li class="page-item"><a class="page-link" href="'.$href.'page='.($page -1).'">Previous</a></li>';
-				}
->>>>>>> 7952b6f156d37be95179a282a6f09c662ca75db0
-
-				$pageList = [1, $page-1 ,$page, $page+1, $totalPages];
-
-				$isFirst = $isBefore = false;
-				for ($i=1; $i <= $totalPages; $i++) { 
-					if (!in_array($i, $pageList)) {
-						if (!$isFirst && $i < $page) {
-							$isFirst = true;
-							echo '<li class="page-item"><a class="page-link" href="'.$href.'page='.($page - 2).'">...</a></li>';
+							echo '<li>
+							<a href="../admin/list-product.php?category='.$item['id'].'" style="text-decoration: none;color:#000;"><span>'.(++$count).'</span>'.$item['title'].'</a>
+							</li>';
 						}
-						if (!$isBefore && $i > ($page+1)) {
-							$isBefore = true;
-							echo '<li class="page-item"><a class="page-link" href="'.$href.'page='.($page + 2).'">...</a></li>';
-						}
-						continue;
-					}
-					if ($i == $page) {
-						echo '<li class="page-item active"><a class="page-link" href="'.$href.'page='.$i.'">'.$i.'</a></li>';
-					} else {
-						echo '<li class="page-item"><a class="page-link" href="'.$href.'page='.$i.'">'.$i.'</a></li>';
-					}
-				}
-				if ($page < $totalPages) {
-					echo '<li class="page-item"><a class="page-link" href="'.$href.'page='.($page +1).'">Next</a></li>';
-				}
-			?>
-		</ul>
-	</div>
+					?>
+				</ul>
+				</div>
+			</div>
+			<div class="col-md-9">
+				
+					<div class="row">
+		<?php
+		foreach ($data as $item) {
+			echo '<div class="col-md-3">
+						<div class="product-box">
+							<div class="product-img">
+								<a href="../cart/detail.php?id='.$item['id'].'"><img src="'.$item['thumbnail'].'" style="width: 100%"></a>
+							</div>
 
+							<div class="product-content"  href="../cart/detail.php?id='.$item['id'].'">
+								<a style="text-decoration: none;" href="../cart/detail.php?id='.$item['id'].'"><h4 style="height: 34.91px;" >'.$item['title'].'</h4></a>
+
+								<div class="price">
+									<p >'.number_format($item['price'], 0, '', '.').' VND</p>
+								</div>		
+							<button style="margin-bottom: 10px;color: #fff" class="btn-dark" onclick="addToCart('.$item['id'].')"></i> Thêm vào giỏ</button>
+							</div>
+				        </div>							
+				 </div>';
+		}
+		?>							
+				</div>		
+			</div>
+		</section>
+			<div class="container" style="margin-bottom: 5%; margin-left: 43%;">
+				<div class="pagination">
+					<?php
+						if ($page > 1 ) {
+							echo '<a href="'.$href.'page='.($page -1).'" class="previous s"><i class="fa fa-angle-left"></i></a>';
+						}
+
+						$pageList = [1, $page-1 ,$page, $page+1, $totalPages];
+
+						$isFirst = $isBefore = false;
+						for ($i=1; $i <= $totalPages; $i++) { 
+							if (!in_array($i, $pageList)) {
+								if (!$isFirst && $i < $page) {
+									$isFirst = true;
+									echo '<a href="'.$href.'page='.($page - 2).'" class="btn ">...</a>';
+								}
+								if (!$isBefore && $i > ($page+1)) {
+									$isBefore = true;
+									echo '<a href="'.$href.'page='.($page + 2).'" class="btn ">...</a>';
+								}
+								continue;
+							}
+							if ($i == $page) {
+								echo '<a href="'.$href.'page='.$i.'" class="btn active">'.$i.'</a>';
+							} else {
+								echo '<a href="'.$href.'page='.$i.'" class="btn active">'.$i.'</a>';
+							}
+						}
+						if ($page < $totalPages) {
+							echo '<a href="'.$href.'page='.($page +1).'" class="next "><i class="fa fa-angle-right"></i></a>';
+						}
+					?>
+				</div>
+			</div>
+
+			</div>
+		</div>
+		
 <?php
 	include_once('../layout/footer.php');
 ?>
 <script type="text/javascript">
 	function addToCart(id) {
         alert('Thêm vào giỏ thành công! Hãy kiểm tra giỏ hàng.')
-		$.post('api-product.php', {
+		$.post('../cart/api-product.php', {
 			'action': 'add',
-			'id': id,
-			'num': 1,
+			'id':id,
+			'num': 1
 		}, function(data) {
 			location.reload()
 		})
 	}
-</script>
-<<<<<<< HEAD
-<?php
-	include_once('../home/footer.php');
-?>
+	$(document).ready(function(){
+  var $listItems = $('.pagination a');
 
+  $listItems.click(function(){
+    $listItems.removeClass('active');
+    $(this).addClass('active');  
+
+  });
+});
+</script>
+
+	

@@ -2,7 +2,7 @@
 	$title = "Nail | Dịch Vụ";
 	include_once('../layout/header.php');
 ?> 
-	<link rel="stylesheet" type="text/css" href="dichvu.css">
+	<link rel="stylesheet" type="text/css" href="../css/dichvu.css">
 	<div class="contai1">
 		<div class="about" >
 			<div class="text-ab">

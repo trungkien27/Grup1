@@ -1,9 +1,9 @@
 <?php
-$title = "Trang thanh toán ";
+$title = "Nail | Thanh Toán ";
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
-<<<<<<< HEAD
-include_once('../home/header.php');
+
+include_once('../layout/header-checkout.php');
 
 require_once('checkout-form.php');
 
@@ -38,14 +38,13 @@ $token = '';
 ?>
 <<<<<<< HEAD
 <body style="background-color: #f8f8f8;">
-<link rel="stylesheet" type="text/css" href="checkout.css">
+<link rel="stylesheet" type="text/css" href="../css/checkout.css">
 	<form method="post">
-=======
+
 <!-- body -->
 
 <form method="post">
->>>>>>> 7952b6f156d37be95179a282a6f09c662ca75db0
-	<div class="container" style="margin-top:7%;">
+	<div class="container" style="margin-top:7%;margin-bottom: 10%;">
 		<div class="row">
 			<div class="col-md-5" >
 				<div class="thanh"></div>
@@ -54,22 +53,28 @@ $token = '';
 				  <label for="userid">userid:</label>
 				  <input type="number" class="form-control" id="userID" name="userID" value="<?=$user['id']?>">
 				</div>
-				<div class="form-group">
-				  <label for="usr">Tên người nhận:</label>
-				  <input required="true" type="text" class="form-control" id="usr" name="fullname">
-				</div>
-				<div class="form-group">
-				  <label for="address">Địa chỉ: </label>
-				  <input required="true" type="text" class="form-control" id="address" name="address">
-				</div>
-				<div class="form-group">
-				  <label for="phone_number">Số điện thoại: </label>
-				  <input required="true" type="text" class="form-control" id="phone_number" name="phone_number">
-				</div>
-				<div class="form-group">
-				  <label for="note">Ghi chú: </label>
-				  <textarea class="form-control" rows="4" name="note" id="note"></textarea>
-				</div>
+				<div class="wrapper">
+			     <div class="input-data">
+			        <input type="text" required name="fullname">
+			        <div class="underline"></div>
+			        <label>Tên người nhận</label>
+			     </div>
+			     <div class="input-data">
+			        <input type="text" required name="address">
+			        <div class="underline"></div>
+			        <label>Địa chỉ</label>
+			     </div>
+			     <div class="input-data">
+			        <input type="text" required name="phone" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
+			        <div class="underline"></div>
+			        <label>Số điện thoại</label>
+			     </div>
+			     <div class="input-data">
+			          <textarea style="max-height: 162px;"  rows="4" name="note" id="note"></textarea>
+			          <div class="underline1"></div>
+			          <label>Ghi chú</label>
+			        </div>
+			  </div>
 			</div>
 			<div class="col-md-7">	
 				<div class="container">
@@ -118,9 +123,9 @@ $token = '';
 								</div>
 								<p><span >Tổng tiền hàng:</span><span style="margin-left: 68%"><?=number_format($total, 0, ',', '.')?>đ</span></p>
 								<p><span>Phí vận chuyển:</span><span style="margin-left: 68%">20.000đ</span></p>
-								<p><span>Tổng thanh toán:</span><span style="margin-left: 68%;font-size: 25px;font-weight: bold;"><?=number_format($num*$item['price']+20000)?>đ</span></p>
+								<p><span>Tổng thanh toán:</span><span style="margin-left: 68%;font-size: 25px;font-weight: bold;"><?=number_format($total+20000, 0, ',', '.')?>đ</span></p>
 								<div style="height: 50px;border-top: 1px dashed rgba(0,0,0,.09);">
-									<button style="float: right;margin-top: 19px;margin-right: 32px;" class="btn btn-dark">Đặt Hàng</button>
+									<button style="float: right;margin-top: 5px;margin-right: 32px;" class="btn btn-dark">Đặt Hàng</button>
 							</div>	
 						</div>
 					</div>
@@ -140,5 +145,5 @@ $token = '';
 	}
 </script>
 <?php
-	include_once('../home/footer.php');
+	include_once('../layout/footer.php');
 ?>

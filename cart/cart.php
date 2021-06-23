@@ -1,7 +1,7 @@
 <?php
 require_once('../db/dbhelper.php');
 require_once('../utils/utility.php');
-include_once('../home/header.php');
+include_once('../layout/header-cart.php');
 
 	$cart = [];
 	if(isset($_COOKIE['cart'])) {
@@ -26,8 +26,8 @@ include_once('../home/header.php');
 	}
 ?>
 
-<link rel="stylesheet" type="text/css" href="cart.css">
-<body style="background-color: #f8f8f8; margin-top: 50px;">
+<link rel="stylesheet" type="text/css" href="../css/cart.css">
+<body>
 <?php if($count > 0) { ?>
 	<section class="mt-5">
 		<div class="container">
@@ -35,38 +35,30 @@ include_once('../home/header.php');
 				<table class="table" style="background-color: #fff; margin-top: 40px;">
 					<thead class="thead-dark">
 						<tr >
-							<th scope="col" class="text-white">Sản Phẩm</th>
-							<th scope="col" class="text-white">Đơn Giá</th>
-							<th scope="col" class="text-white">Số Lượng</th>
-							<th scope="col" class="text-white">Số Tiền</th>
-							<th scope="col" class="text-white">Thao Tác</th>
+							<th scope="col" class="text-white">Sản phẩm</th>
+							<th scope="col" class="text-white">Đơn giá</th>
+							<th scope="col" class="text-white">Số lượng</th>
+							<th scope="col" class="text-white">Số tiền</th>
+							<th scope="col" class="text-white">Thao tác</th>
 						</tr>
 					</thead>
 					<tbody>
 
-
 <?php
-	$count = 0;
+	// $count = 0;
 	$total = 0;
-	foreach ($cart as $item) {
-		$count += $item['num'];
-	}
+
 	foreach ($cartList as $item) {
 		$num = 0;
 		foreach ($cart as $value) {
 			if($value['id'] == $item['id']) {
 				$num = $value['num'];
-				// if($num > 20) {
-					// $num = 20;
-					// $value['num'] = $num;
-				// }
-				
 				break;
 			}
 		}
 		$total += $num*$item['price'];
 		echo '
-			<tr>
+						<tr>
 							<td>
 								<div class="main">
 									<div class="d-flex">
@@ -78,24 +70,24 @@ include_once('../home/header.php');
 								</div>
 							</td>
 							<td>
-								<h6 style="margin-top: 50%;">'.number_format($item['price'], 0, ',', '.').'</h6>
+								<h6 style="margin-top: 87%;">'.number_format($item['price'], 0, ',', '.').'</h6>
 							</td>
 							<td>
 								<form>
 									<div class="soluong">
-										<button type="button" class="soluong-btn1"><i class="fas fa-minus" alt="minus"></i></button>
+										
 										<input required="true" class="input-number " id="total1"  type="number" oninput="this.value = Math.abs(this.value)" pattern="[0-9]" value="'.$num.'" min="1" name="soluong" >
-										<button type="button" class="soluong-btn2"><i class="fas fa-plus"  alt="plus"></i></button>
+									
 									</div>
 								</form>
 							</td>
 							<td>
-								<h5 style="margin-top: 50%;">'.number_format($num*$item['price'], 0, ',', '.').'</h5>
+								<h5 style="margin-top: 69%;">'.number_format($num*$item['price'], 0, ',', '.').'</h5>
 							</td>
 							<td>
-								<div style="display: flex;margin-top: 50px;margin-top: 43px;">
-									<a onclick="deleteCart('.$item['id'].')" style="text-align: center;font-size: 20px;margin-right: 24px;margin-top: 20px;">Xóa</a>
-								<a href="../admin/list-product.php"><button style="margin-right: -63px;" class="btn btn-dark">Tìm Sản Phẩm</br> Khác</button></a>
+								<div style="display: flex;margin-top: 10%;">
+									<a href="../admin/list-product.php"><button style="margin-right: 15px;" class="btn btn-dark">Tìm sản phẩm khác</br>cùng loại</button></a>
+									<button class="btn btn-danger" onclick="deleteCart('.$item['id'].')" style="text-align: center;">Xóa</button>
 								</div>
 							</td>
 						</tr>';
@@ -109,12 +101,12 @@ include_once('../home/header.php');
 </section>
 
 			<div class="col-lg-8 offset-lg-2" style="margin-left: 16.666667%;">
-		<div class="checkout" >
-			<ul style="background-color: #fff;">
-				<h4 style="float: left;color: #000;margin-top: 12px;">Tổng Số Sản Phẩm: <?=$count?></h4>
+		<div class="checkout" style="background-color: #fff;">
+			<ul>
+				<h4 style="float: left;margin-top: 12px;">Tổng số sản phẩm: <?=$count?></h4>
 				<li class="cart-total">
 					<span>Tổng cộng: <?=number_format($total, 0, ',', '.')?>đ</span>
-					<a href="checkout.php"><button style="float: right;margin-right: 38px;" class="btn btn-dark">Mua Hàng</button></a>
+					<a href="checkout.php"><button style="float: right;margin-right: 38px;text-transform: uppercase;" class="btn btn-dark">mua hàng</button></a>
 				</li>	
 			</ul>
 		</div>
@@ -126,7 +118,7 @@ include_once('../home/header.php');
 	<div class="" style="text-align: center; margin-top: 200px;">
 		<i style="font-size: 140px;" class="fas fa-cart-plus"></i>
 		<h6 style="margin-top: 10px;">Giỏ hàng của bạn còn trống</h6>
-		<a href="../admin/list-product.php"><button class="btn btn-dark" style="margin-top: 10px;">Mua Ngay</button></a>
+		<a href="../admin/list-product.php"><button class="btn btn-dark" style="margin-top: 10px;">Mua ngay</button></a>
 	</div>
 <?php } ?>
 <script type="text/javascript">

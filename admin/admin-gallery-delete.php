@@ -33,10 +33,13 @@
 
     i {
       padding-right: 12px;
+      color: #000;
     }
 
     li {
       list-style-type: none;
+      color: #000;
+      font-weight: bold;
     }
 
     body {
@@ -54,7 +57,7 @@
   <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
-        <a href="../home/trangchu.php" >
+        <a href="../home/index.php" >
           <div class="logo-image-big">
             <img src="https://static.wixstatic.com/media/4e382d_0d579ec3ec6241af9e1380ed79c56b7b~mv2.png/v1/fill/w_406,h_46,al_c,q_85,usm_0.66_1.00_0.01/Asset%202_3x.webp" style="width:325px; margin-top: 13px; margin-bottom: 9px;">
           </div>
@@ -75,9 +78,9 @@
             </a>
           </li>
           <li>
-            <a href="">
-              <i class="nc-icon nc-ruler-pencil"></i>
-              <p>Bài viết</p>
+            <a href="../admin/ungtuyen.php">
+              <i class="nc-icon nc-badge"></i>
+              <p>Tuyển dụng</p>
             </a>
           </li>
           <li>
@@ -110,9 +113,6 @@
     <div class="main-panel" style="height: 1400px;">
       <div class="content">
         <!-- content start here -->
-<?php
-require_once '../layout/admin-header.php';
-?>
     <body>
         <div class="container" style="margin-top: 10px;">
         <?php

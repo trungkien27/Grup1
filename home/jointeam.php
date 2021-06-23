@@ -1,10 +1,10 @@
 <?php
 	$title = "Nail | Tuyển Dụng";
-	include_once('../home/header.php');
+	include_once('../layout/header.php');
 ?> 
 
 <body>
-	<link rel="stylesheet" type="text/css" href="jointeam.css">
+	<link rel="stylesheet" type="text/css" href="../css/jointeam.css">
 	<div style="width: 1360px;height: 1211px;display: flex;">
 		<div class="join1" style="	width: 680px;height: 1184px;left: 79.5px; ">
 			<p class="font_a" style="vertical-align: initial;">Tham gia nhóm NB của chúng tôi</p>
@@ -25,22 +25,23 @@
 						<input required="true" type="email" name="email" placeholder="Email">
 					</div>
 					<div class="input_join">
-						<input required="true" type="text" name="phone" placeholder="Số Điện Thoại">
+						<input required="true" type="text"  name="phone_number" placeholder="Số Điện Thoại" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')">
 					</div>
 					<div class="input_join">
-						<select  name="select">
-							<option style="display: none;">Vị Trí Ứng Tuyển</option>
+						<select name="positon" id="test" onchange="document.getElementById('text_content').value=this.options[this.selectedIndex].text">
+							<option disabled selected>Vị Trí Ứng Tuyển</option>
 							<option value="Chuyên Gia Thẩm Mỹ">Chuyên Gia Thẩm Mỹ</option>
-							<option value="Kỹ Thuật Viên LÀm Móng">Kỹ Thuật Viên LÀm Móng</option>
-							<option value="Chuyên Gia TRị Liệu Xoa Bóp">Chuyên Gia TRị Liệu Xoa Bóp</option>
+							<option value="Kỹ Thuật Viên Làm Món">Kỹ Thuật Viên Làm Móng</option>
+							<option value="Chuyên Gia Trị Liệu Xoa Bóp">Chuyên Gia Trị Liệu Xoa Bóp</option>
 							<option value="Lễ Tân">Lễ Tân</option>
+							<input type="hidden" name="test_text" id="text_content" value="">
 						</select>
 					</div>
-					<div class="input_join">
+					<!-- <div class="input_join">
 						<input id="txtDate" type="date" name="date" placeholder="Ngày Hẹn">
-					</div>
+					</div> -->
 					<div class="input_join">
-						<input  required="true" type="text" name="link" placeholder="Link CV">
+						<input  required="true" type="text" name="link_cv" placeholder="Link CV">
 					</div>
 					<button style="margin-top: 42px;margin-left: 231px;font-size: 24px;padding-left: 30px;padding-right: 30px;" class="btn btn-dark">Gửi</button>
 
@@ -53,24 +54,35 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		$(function(){
-    		var dtToday = new Date();
-    
-    		var month = dtToday.getMonth() + 1;
-   			var day = dtToday.getDate();
-    		var year = dtToday.getFullYear();
-    		if(month < 10)
-        		month = '0' + month.toString();
-    		if(day < 10)
-        		day = '0' + day.toString();
-    
-    		var minDate= year + '-' + month + '-' + day;
-    
-    		$('#txtDate').attr('min', minDate);
-})
 	</script>
-
+<?php
+$fullname = $email = $phone_number = $position = $link_cv = '';
+if(!empty($_POST)) {
+	if(getPost('test_text') == "") {
+		echo "<script>
+		alert('Vui lòng chọn một vị trí ứng tuyển !!!');
+		window.location.href='../home/jointeam.php';
+		</script>";
+    } else {
+        $position = getPost('test_text');
+        // $alert2 = 'Bạn đã chọn: ' . $position;
+        // echo $alert2;
+        echo "<script>
+		alert('Cảm ơn bạn ! Chúng tôi sẽ phản hồi lại sớm nhất có thể.');
+		</script>";
+    	
+	$fullname = getPost('fullname');
+	$email = getPost('email');
+	$phone_number = getPost('phone_number');
+	$link_cv = getPost('link_cv');
+	$created_at = $updated_at = date('Y-m-d H:i:s');
+	
+	$sql = "insert into recruitment (fullname, email, phone_number, position, link_cv, created_at, updated_at) values ('$fullname', '$email', '$phone_number', '$position', '$link_cv', '$created_at', '$updated_at')";
+	execute($sql);
+	}
+}
+?>
 
 <?php
-	include_once('../home/footer.php');
+	include_once('../layout/footer.php');
 ?>

@@ -1,9 +1,9 @@
 <?php
-	$title = "Nail | About";
+	$title = "Nail | Giới Thiệu";
 	include_once('../layout/header.php');
 ?> 
-<link rel="stylesheet" type="text/css" href="about.css">
-	<div class="contai1">
+<link rel="stylesheet" type="text/css" href="../css/about.css">
+	<div class="contai1" style="background-color: #f8f8f8;">
 		<div class="about" >
 			<div class="text-ab">
 				<h1 style="width: 920px;height: 215px;">
@@ -74,9 +74,5 @@
 	</div>
 
 <?php
-<<<<<<< HEAD
-	include_once('../home/footer.php');
-=======
 	include_once('../layout/footer.php');
->>>>>>> 7952b6f156d37be95179a282a6f09c662ca75db0
 ?>

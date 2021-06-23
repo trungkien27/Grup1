@@ -12,6 +12,19 @@ if(!empty($_POST)) {
 	$sql = "select * from user where email = '$email' and password = '$password'";
 	$result = executeResult($sql);
 	// var_dump($result);
+
+	$callback = [];
+	$current = $result[0]['current_cart'];
+	var_dump($current);
+	var_dump($callback);
+
+	if (isset($current)) {
+		$callback = json_decode($current, true);
+		setcookie('cart', json_encode($callback), time() + 30*24*3600, '/');
+		/*var_dump($current);
+		var_dump($callback);*/
+	} 
+
 	if($result != null && sizeof($result) == 1) {
 		//login thanh cong
 		//dùng thời điểm log in + email người dùng -> tạo ra token.
@@ -25,11 +38,13 @@ if(!empty($_POST)) {
 
 		if ($email == 'admin@admin.com') {
 			header('Location: ../admin/edit-category.php');
-		} else header('Location: ../home/trangchu.php');
+		} else header('Location: ../home/index.php');
 		die();
 	}
 	if(count($result) < 1) {
-		header('Location: ../user/login.php');
-		// echo('Email hoặc mật khẩu không đúng !!!');
+		echo "<script>
+		alert('Email hoặc mật khẩu không đúng !!!');
+		window.location.href='../user/login.php';
+		</script>";
 	}
 }

@@ -31,7 +31,7 @@
       border: 1px solid firebrick;
     }
 
-    i {
+   i {
       padding-right: 12px;
       color: #000;
       font-weight: bold;
@@ -44,7 +44,7 @@
     }
 
     body {
-      background-color: white;
+      background-color: ghostwhite;
     }
 
     h2 {
@@ -58,7 +58,7 @@
   <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
-        <a href="../home/trangchu.php" >
+        <a href="../home/index.php" >
           <div class="logo-image-big">
             <img src="https://static.wixstatic.com/media/4e382d_0d579ec3ec6241af9e1380ed79c56b7b~mv2.png/v1/fill/w_406,h_46,al_c,q_85,usm_0.66_1.00_0.01/Asset%202_3x.webp" style="width:325px; margin-top: 13px; margin-bottom: 9px;">
           </div>
@@ -79,9 +79,9 @@
             </a>
           </li>
           <li>
-            <a href="">
-              <i class="nc-icon nc-ruler-pencil"></i>
-              <p>Bài viết</p>
+            <a href="../admin/ungtuyen.php">
+              <i class="nc-icon nc-badge"></i>
+              <p>Tuyển dụng</p>
             </a>
           </li>
           <li>
@@ -124,7 +124,7 @@ require_once('../utils/utility.php');
 require_once('form-product.php');
 ?>
 <!-- body START -->
-	<div class="container" style="margin-top: 10px;background-color: #fff;">
+	<div class="container" style="margin-top: 10px;">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h2 class="text-center">Quản lý sản phẩm</h2>
@@ -161,41 +161,32 @@ require_once('form-product.php');
 					<tbody>
 <?php 
 
-if (!empty($_GET)) {
-	if (isset($_GET['search'])) {
-		$search = $_GET['search'];
-
-
-	}
+$search = getGet('search');
+if ($search != '') {
+	$tail2 = " where product.title like '%$search%' ";
+} else {
+	$tail2 = '';
 }
 
+$totalItems = executeResult("select count(*) 'dem' from product".$tail2, true);
+$total = $totalItems['dem'];
 
-	$num_page = 6;
+$href = 'edit-product.php?search='.$search.'&';
+$page = getGet('page');
+if ($page == '') {
 	$page = 1;
-	if (isset($_GET['page'])) {
-		$page = $_GET['page'];
-	}
+}
+
+	$num_page = 4;
+	$totalPage = ceil($total/$num_page);
 	$index = ($page - 1) * $num_page;
 	//gia du page 1 -> index = (1-1)*6 = 0
 	//page 2 -> index = (2-1)*6= 6
 
 	//tim tong so san pham trong database
-	$sql = 'select count(*) total from product';
-	$productList = executeResult($sql);
-	$total = $productList[0]['total'];
-
-	//lay so sp chia cho so sp tren 1 trang -> ra duoc so trang, lam tron len.
-	$totalPage = ceil($total/$num_page);
-
-	//lay tu product o vi tri index, lay num_page phan tu
-	$sql = "select id, title, thumbnail, price, quantity, created_at from product limit ".$index.','.$num_page;
-
-	// $sql = 'select id, title, thumbnail, price, quantity, updated_at from product where title like "%'.$_GET['search'].'%" limit'.$index.','.$num_page;
-	$productList = executeResult($sql);
+	$productList = executeResult("select * from product ".$tail2. " order by product.created_at desc limit $index, $num_page ");
 
 	$count = $index;
-
-	// $count = 0;
 	foreach ($productList as $item) {
 		echo '<tr>
 				<td style="width:70px;">'.++$count.'</td>
@@ -214,7 +205,7 @@ if (!empty($_GET)) {
 				<ul class="pagination">
 					<?php
 						if ($page >1 ) {
-							echo '<li class="page-item"><a class="page-link" href="?page='.($page -1).'">Previous</a></li>';
+							echo '<li class="page-item"><a class="page-link" href="'.$href.'page='.($page -1).'">Previous</a></li>';
 						}
 
 						$pageList = [1, $page-1 ,$page, $page+1, $totalPage];
@@ -224,22 +215,22 @@ if (!empty($_GET)) {
 							if (!in_array($i, $pageList)) {
 								if (!$isFirst && $i < $page) {
 									$isFirst = true;
-									echo '<li class="page-item"><a class="page-link" href="?page='.($page - 2).'">...</a></li>';
+									echo '<li class="page-item"><a class="page-link" href="'.$href.'page='.($page - 2).'">...</a></li>';
 								}
 								if (!$isBefore && $i > ($page+1)) {
 									$isBefore = true;
-									echo '<li class="page-item"><a class="page-link" href="?page='.($page + 2).'">...</a></li>';
+									echo '<li class="page-item"><a class="page-link" href="'.$href.'page='.($page + 2).'">...</a></li>';
 								}
 								continue;
 							}
 							if ($i == $page) {
-								echo '<li class="page-item active"><a class="page-link" href="?page='.$i.'">'.$i.'</a></li>';
+								echo '<li class="page-item active"><a class="page-link" href="'.$href.'page='.$i.'">'.$i.'</a></li>';
 							} else {
-								echo '<li class="page-item"><a class="page-link" href="?page='.$i.'">'.$i.'</a></li>';
+								echo '<li class="page-item"><a class="page-link" href="'.$href.'page='.$i.'">'.$i.'</a></li>';
 							}
 						}
 						if ($page < $totalPage) {
-							echo '<li class="page-item"><a class="page-link" href="?page='.($page +1).'">Next</a></li>';
+							echo '<li class="page-item"><a class="page-link" href="'.$href.'page='.($page +1).'">Next</a></li>';
 						}
 					?>
 				</ul>
